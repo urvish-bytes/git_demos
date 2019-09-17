@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap');
+
+body {font-family: 'Open Sans', sans-serif;background-color: #fff; font-size: 18px; font-weight: 400}
+.topSection {margin-top: 56px;}
+
+/*body {}*/
+.header {float: left;width: 100%;padding-bottom: 20px;/*background-color: #7e0080;*/padding-top: 20px;}
+.Logo {margin-top: 0;}
+
+.full_section{height: calc(100vh - 56px); width: 100%; display: flex; flex-flow: column; align-content: center; justify-content: center; padding: 100px 0; min-height: 500px;}
+
+.center_band{max-width: 900px; margin: 0 auto; padding:100px; width: 100%;}
+h2{font-weight: 800; font-size: 60px; margin-bottom: 30px; margin-top: 0}
+.center_band span{font-size: 24px; display: block; margin-bottom: 60px;}
+.center_band p{font-size: 24px;}
+.center_band ul{margin-bottom: 20px;}
+.center_band ul li{font-size: 18px; line-height: 30px;}
+
+.box select {background-color: #0563af; color: white; padding: 12px; width: 100%; border: none; font-size: 20px; box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+  -webkit-appearance: button; appearance: button; outline: none;}
+.box::before {content: ""; position: absolute; top: 0; right: 15px; width: 20%; height: 100%; text-align: center; background:url(../images/down_arrow.png) no-repeat; background-position: center center; transition:all 0.3s linear 0s; pointer-events: none; background-color: rgba(255,255,255,0.1)}
+
+.box:hover::before { background-color: rgba(255, 255, 255, 0.2);}
+.box select option {padding: 30px;}
+
+.btn{padding:15px 20px; width: 300px; margin:0 auto; display: block; background:#7e0080; color: #fff; font-size: 22px; transition: all 0.3s linear 0s; margin-top: 30px;}
+.btn:hover , .btn:focus{background-color: #002a64; color: #fff;}
+
+.price_col label{display: block; background-color:#fdfac4; margin-top: 10px; display: block; font-size: 30px; margin-bottom: 0; padding-top:10px; padding-bottom: 10px}
+.price_col img{padding: 12px 12px 0; max-width: 100%}
+.price_wrap{border: 1px solid #ccc; text-align: center; margin-top: 5px;}
+
+.center_band .price_content span{margin-bottom: 10px }
+
+h3{font-size: 35px; font-weight: 800; margin-top:0;}
+
+.sec-section .center_band {background: #fff; border: 1px solid #cccccc; border-top: 3px solid #012b64;}
+.sec-section.full_section{background-color: #f9f9f9;}
+.third-section.full_section{height: auto}
+.third-section .center_band {max-width: 1200px; margin: 0 auto; padding: 0 80px; width: 100%;}
+
+/*================================= Common For All mobile definitions #mx ================================= */
+@media all and (max-width: 767px) {
+.full_section{/*height: auto;*/ padding: 30px 0;  min-height:auto}
+h2{font-size: 28px; margin-bottom: 15px; margin-top: 0}
+h3{font-size: 22px;}
+.center_band .price_content span{font-size: 16px;}
+.center_band {padding: 20px 15px}
+.center_band span , .center_band p{font-size: 18px; margin-bottom: 30px;}
+
+.box{margin-bottom: 15px;}
+
+.btn{margin-top: 15px}
+
+.price_col {margin-bottom: 20px;}
+.sec-section{ padding: 40px 15px; margin-bottom: 20px;}
+.row{margin: 0}
+.third-section .center_band{padding: 0 15px;}
+.center_band br{display: none}
+form{max-width: 480px; margin: 0 auto}
+}
+
+/********************************* ipad portrait #ip ********************************/
+@media only screen and (min-width : 768px) and (max-width: 1024px) {
+h2{font-size: 28px; margin-bottom: 15px; margin-top: 0}
+h3{font-size: 22px;}
+
+.full_section{padding: 30px 0; min-height:auto}
+.center_band span , .center_band p{font-size: 18px; margin-bottom: 30px;}
+.center_band {max-width: 680px;padding: 50px 30px;}
+}
+  

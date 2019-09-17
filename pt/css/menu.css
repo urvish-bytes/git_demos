@@ -1,0 +1,541 @@
+
+.TopHeader {
+    z-index: 100;
+    background-color: #fff;
+    -webkit-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+    -moz-box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+    box-shadow: 0px 3px 3px 0px rgba(0,0,0,0.1);
+}
+
+.BottomShadow {
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.30);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.30);
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.30);
+}
+.TopHeader {
+    position: fixed;
+    width: 100%;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    z-index: 99;
+}
+.TopHeader, .TopBg.nav-up {
+    top: 0 !important;
+    transition: none !important;
+    width: 100%;
+    height: auto !important;
+    background-color: #fff !important;
+}
+
+/*.TopHeader {
+    position: relative;
+    z-index: 0;
+    background-color: #fff;
+}*/
+.TopMainWrapper {
+    width: 1200px;
+    margin: 0 auto;
+}
+.ClearBoth {
+    clear: both;
+    min-height: 1px;
+}
+.Logo {
+    z-index: 100;
+    width: 152px;
+    float: left;
+    /* width: 20%; */
+    padding: 6px 0 !important;
+    margin-bottom: 0;
+}
+.Logo a {
+    display: block;
+    width: 152px;
+    height: 44px;
+    background: url(../images/logo.png) no-repeat left top;
+    text-indent: -999999px;
+    background-size: 100% !important;
+}
+.TopMainRight {
+    float: right;
+    display: block;
+}
+#navigation {
+    font-size: 15px;
+    color: #fff;
+    text-transform: capitalize;
+    line-height: 25px;
+    letter-spacing: 0px;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0px 0;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+#navigation li {
+    float: left;
+    margin: 0;
+    padding: 0px 10px;
+    position: relative;
+    background-image: none;
+    z-index: 400;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 40px;
+    color: #ffffff;
+    background: none;
+    border-radius: 0px;
+    padding: 8px 10px; /*8px 15px;*/
+    display: block;
+    text-align: center;
+    transition: all ease 0.5s;
+}
+#navigation li:last-child a {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 24px;
+    color: #ffffff;
+    background-color: #7e0080;
+    border-radius: 4px;
+    padding: 8px 48px;
+    display: block;
+    text-align: center;
+    transition: all ease 0.5s;
+}
+#navigation li:last-child a:hover {
+    color: #ffffff;
+    background-color: #002a64;
+    border-radius: 4px;
+    display: block;
+}
+#navigation a {
+    text-decoration: none;
+    color: #333333;
+    position: relative;
+    background-color: transparent;
+    border-radius: 0px;
+    padding: 8px 21px;
+}
+#navigation a, #navigation a.on, #navigation a:hover {
+    text-decoration: none;
+    padding: 8px 17px;
+}
+#navigation a.on, #navigation a:hover {
+    color: #7e0080;
+    ;
+}
+/*#navigation li:first-child a{
+    padding-left:0px;
+}*/
+/*#navigation li:last-child a{
+    padding-right:0px;
+}*/
+#navigation li:last-child:after {
+    display: none;
+}
+/* main level link hover */
+#navigation .current a, #navigation li:hover > a {
+    text-decoration: none;
+}
+/* sub levels link hover */
+#navigation ul li:hover a, #navigation li:hover li a {
+    text-indent: 0px;
+    background: none;
+    background-color: #26a9c9;
+    color: #ffffff;
+    display: block;
+    float: none;
+    margin: 0px;
+    text-transform: none;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 700;
+    line-height: normal;
+    border-top: 1px solid #fff;
+    height: auto;
+    width: 160px;
+}
+#navigation ul li:hover a:hover {
+    width: 160px;
+}
+#navigation ul a:hover {
+    background: none !important;
+    background-color: #000 !important;
+    color: #ffffff !important;
+    text-decoration: none;
+}
+/* dropdown */
+#navigation li:hover > ul {
+    display: block;/*border:1px solid #37b3d1;*/
+}
+/* level 2 list */
+#navigation ul {
+    display: none;
+    margin: 0;
+    padding: 0;
+    width: auto;
+    position: absolute;
+    top: 56px;
+    left: 0px;
+    background-color: #0b007e !important;
+}
+#navigation ul li {
+    float: none;
+    margin: 0;
+    padding: 0;
+    font-size: 13px;
+    text-align: left;
+}
+#navigation ul li:last-child a {
+    text-align: left !important;
+    padding: 7px 15px;
+    border-radius: 0px;
+}
+#navigation ul a {
+    font-weight: normal;
+    background-color: #7e0080 !important;
+}
+/* level 3+ list */
+#navigation ul ul {
+    left: 181px;
+    top: -3px;
+}
+/* clearfix */
+#navigation:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+}
+button#responsive-menu-button {
+    width: 55px;
+    height: 55px;
+    position: fixed;
+    top: 0px;
+    right: 0%;
+}
+.ResponsiveMenu {
+    position: relative;
+    width: 100%;
+    top: 0px;
+    /*height: 50px;*/
+    /* background-color: #002a64; */
+    background-color: #fff;
+    display: none;
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.75);
+}
+#responsive-menu-container #responsive-menu li {
+    background-image: none;
+}
+
+
+@media only screen and (max-width: 1024px) {
+/*.topSection {
+    margin-top: 80px !important;
+}*/
+.Logo {
+    float: none !important;
+    width: auto !important;
+    text-align: center !important;
+    left: 50% !important;
+    margin-left: 0px !important;
+    padding: 10px 0 !important;
+}
+.HelpWrap .HelpList .ImgWrapper, .TopHeader {
+    display: none !important;
+}
+.ResponsiveMenu, .CompanyTwoColWrap .RightCol .ResMenuList, .ResCronCropsTopCompanies, .TopTaxDebtRelief.ResponsiveCol {
+    display: block;
+}
+.ResponsiveMenu {
+    position: fixed;
+    width: 100% !important;
+    -webkit-box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.75);
+    -moz-box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.75);
+    box-shadow: 0px 0px 6px 0px rgba(50, 50, 50, 0.75);
+    z-index: 999;
+    background-color: #fff;
+}
+.Logo a {
+    margin: 0 auto;
+}
+a.menu-link {
+    display: block;
+    float: right;
+    width: auto;
+    padding: 6px 8px;
+    text-align: center;
+    margin-left: 8px;
+    margin-top: 8px;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+}
+.menu {
+    clear: both;
+    min-width: inherit;
+    float: none;
+    display: block;
+    width: 100%;
+    text-align: left;
+}
+.menu, .menu > ul ul {
+    overflow: hidden;
+    max-height: 0;
+    -webkit-transition: all 0.8s ease-in-out;
+    -moz-transition: all 0.8s ease-in-out;
+    -ms-transition: all 0.8s ease-in-out;
+    -o-transition: all 0.8s ease-in-outt;
+    transition: all 0.8s ease-in-out;
+    position: absolute;
+    z-index: 111;
+    top: 0px;
+}
+button#responsive-menu-button {
+    display: inline-block;
+    transition: transform 0.5s, background-color 0.5s;
+    padding: 0 0;
+    cursor: pointer;
+    text-transform: none;
+    background-color: transparent;
+    border: 0;
+    margin: 0;
+    overflow: visible;
+    z-index: 999;
+    outline: none;
+}
+button#responsive-menu-button .responsive-menu-box {
+    color: #ffffff;
+}
+.responsive-menu-accessible .responsive-menu-box {
+    display: inline-block;
+    vertical-align: middle;
+}
+.responsive-menu-box {
+    width: 25px;
+    height: 19px;
+    position: relative;
+}
+.responsive-menu-inner, .responsive-menu-inner::before, .responsive-menu-inner::after {
+    background-color: #710173 !important;
+}
+.responsive-menu-inner, .responsive-menu-inner::before, .responsive-menu-inner::after {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+.responsive-menu-inner {
+    display: block;
+    top: 50%;
+    margin-top: -1.5px;
+}
+.responsive-menu-inner, .responsive-menu-inner::before, .responsive-menu-inner::after {
+    background-color: #710173 !important;
+}
+.responsive-menu-inner::before {
+    top: -8px;
+}
+.responsive-menu-inner::before, .responsive-menu-inner::after {
+    content: "";
+    display: block;
+}
+.responsive-menu-inner, .responsive-menu-inner::before, .responsive-menu-inner::after {
+    width: 25px;
+    height: 3px;
+    background-color: #ffffff;
+    border-radius: 4px;
+    position: absolute;
+    transition-property: transform;
+    transition-duration: 0.15s;
+    transition-timing-function: ease;
+}
+.responsive-menu-inner::after {
+    bottom: -8px;
+}
+.responsive-menu-inner::before, .responsive-menu-inner::after {
+    content: "";
+    display: block;
+}
+
+.responsive-menu-open #responsive-menu-container.push-right, .responsive-menu-open #responsive-menu-container.slide-right {
+    transform: translateX(0);
+    -ms-transform: translateX(0);
+    -webkit-transform: translateX(0);
+    -moz-transform: translateX(0);
+}
+#responsive-menu-container.push-right, #responsive-menu-container.slide-right {
+    transform: translateX(100%);
+    -ms-transform: translateX(100%);
+    -webkit-transform: translateX(100%);
+    -moz-transform: translateX(100%);
+}
+#responsive-menu-container {
+    margin-top: 63px !important;
+}
+#responsive-menu-container {
+    width: 100%;
+    /*right: 0%;*/
+    transition: transform 0.5s;
+    text-align: left;
+    background: #710173;
+}
+#responsive-menu-container {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#responsive-menu-container {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    z-index: 99998;
+    padding-bottom: 5px;
+    margin-bottom: -5px;
+    outline: 1px solid transparent;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+#responsive-menu-container {
+    display: block;
+}
+#responsive-menu-container #responsive-menu-wrapper {
+    background: #710173;
+}
+#responsive-menu-container *{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+#responsive-menu-container #responsive-menu, #responsive-menu-container #responsive-menu ul {
+    width: 100%;
+}
+#responsive-menu-container li.responsive-menu-item {
+    width: 100%;
+    list-style: none;
+}
+#responsive-menu-container #responsive-menu li.responsive-menu-item .responsive-menu-item-link {
+    font-size: 14px;
+}
+#responsive-menu-container #responsive-menu li.responsive-menu-item a {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 0px solid #ffffff;
+    color: #ffffff;
+    background-color: #710173;
+    word-wrap: break-word;
+}
+#responsive-menu-container #responsive-menu li.responsive-menu-item a {
+    font-size: 15px;
+    border-top: 1px solid rgba(255,255,255,0.4);
+}
+#responsive-menu-container li.responsive-menu-item a {
+    padding: 0 3%;
+}
+#responsive-menu-container li.responsive-menu-item a {
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    position: relative;
+}
+#responsive-menu-container .responsive-menu-item-link, #responsive-menu-container #responsive-menu-title, #responsive-menu-container .responsive-menu-subarrow {
+    transition: background-color 0.5s, border-color 0.5s, color 0.5s;
+}
+#responsive-menu-container #responsive-menu li.responsive-menu-item a:hover .responsive-menu-subarrow {
+    border-bottom: 1px solid rgba(255,255,255,0.4);
+    height: 40px !important;
+}
+#responsive-menu-container #responsive-menu li.responsive-menu-item a:hover .responsive-menu-subarrow {
+    color: #ffffff;
+    border-color: #710173;
+    background-color: #710173;
+}
+#responsive-menu-container #responsive-menu li.responsive-menu-item a .responsive-menu-subarrow.responsive-menu-subarrow-active:hover {
+    color: #ffffff;
+    border-color: #710173;
+    background-color: #710173;
+}
+#responsive-menu-container #responsive-menu li.responsive-menu-item a .responsive-menu-subarrow {
+    right: 0;
+    height: 40px;
+    line-height: 40px;
+    width: 40px;
+    color: #ffffff;
+    border-left: 0px solid #710173;
+    background-color: #710173;
+}
+#responsive-menu-container li.responsive-menu-item a .responsive-menu-subarrow {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    text-align: center;
+    overflow: hidden;
+}
+#responsive-menu-container .responsive-menu-item-link, #responsive-menu-container #responsive-menu-title, #responsive-menu-container .responsive-menu-subarrow {
+    transition: background-color 0.5s, border-color 0.5s, color 0.5s;
+}
+#responsive-menu-container #responsive-menu li.GetHelpNowBtn:last-child {
+    height: auto;
+    padding: 15px 0;
+}
+.GetHelpNowBtn {
+    position: relative;
+    display: inline-block;
+}
+#responsive-menu-container #responsive-menu li.GetHelpNowBtn:last-child a {
+    background-color: #e89b4e;
+    width: 70%;
+    margin: 0px auto;
+    border-top: 0;
+    text-align: center;
+    height: auto;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    padding: 3px;
+}
+#responsive-menu-container #responsive-menu li.GetHelpNowBtn:last-child a {
+    width: 210px;
+    margin: 0px;
+    margin-left: 3%;
+}
+#responsive-menu-container #responsive-menu li.responsive-menu-item .responsive-menu-item-link {
+    font-size: 14px;
+}
+#responsive-menu-container #responsive-menu li.responsive-menu-item a {
+    height: 40px;
+    line-height: 40px;
+    border-bottom: 0px solid #ffffff;
+    color: #ffffff;
+    background-color: #710173;
+    word-wrap: break-word;
+}
+#responsive-menu-container li.responsive-menu-item a {
+    width: 100%;
+    display: block;
+    text-decoration: none;
+    padding: 0 5%;
+    position: relative;
+}
+#responsive-menu-container .responsive-menu-item-link, #responsive-menu-container #responsive-menu-title, #responsive-menu-container .responsive-menu-subarrow {
+    transition: background-color 0.5s, border-color 0.5s, color 0.5s;
+}
+#responsive-menu-container #responsive-menu ul a.responsive-menu-item-link {
+    padding-left: 6%;
+}
+#responsive-menu-container #responsive-menu ul.responsive-menu-submenu > li.responsive-menu-item:first-child > a {
+    border-top: 1px solid rgba(255,255,255,0.4) !important;
+}
+#responsive-menu-container #responsive-menu li.responsive-menu-item a:hover {
+    border-color: rgba(255,255,255,0.4) !important;
+}
+
+}
