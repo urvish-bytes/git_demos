@@ -59,4 +59,4 @@ class Model_faq extends CI_Model
         $this->db->update('tbl_faq_photo',$data);
     }
     
-} 
+}

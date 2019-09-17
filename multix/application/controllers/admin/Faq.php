@@ -40,13 +40,13 @@ class Faq extends CI_Controller
 
 	   		if($valid == 1)
 		    {	
-		    	$trimtitle = strip_tags(html_entity_decode($_POST['faq_title']));
-		    	// $trimhtml = strip_tags(htmlspecialchars_decode($_POST['faq_content']));
-		    	$trimcontent = strip_tags(html_entity_decode($_POST['faq_content']));
-		        
-		        $form_data = array(
-					'faq_title' => $trimtitle,
-					'faq_content' => $trimcontent,
+		    	$trimtitle = strip_tags(html_entity_decode($_POST['faq_title'])); 
+		    	// $trimhtml = strip_tags(htmlspecialchars_decode($_POST['faq_content'])); 
+		    	$trimcontent = strip_tags(html_entity_decode($_POST['faq_content'])); 
+		    
+		        $form_data = array( 
+					'faq_title' => $trimtitle, 
+					'faq_content' => $trimcontent, 
 					'show_on_home' => $_POST['show_on_home']
 	            );
 	            $this->Model_faq->add($form_data);
@@ -93,13 +93,13 @@ class Faq extends CI_Controller
 		    {
 		    	$data['faq'] = $this->Model_faq->getData($id);
 
-	    		$trimtitle = strip_tags(html_entity_decode($_POST['faq_title']));
-		    	// $trimhtml = strip_tags(htmlspecialchars_decode($_POST['faq_content']));
-		    	$trimcontent = strip_tags(html_entity_decode($_POST['faq_content']));
-		        
-		        $form_data = array(
-					'faq_title' => $trimtitle,
-					'faq_content' => $trimcontent,
+	    		$trimtitle = strip_tags(html_entity_decode($_POST['faq_title'])); 
+		    	// $trimhtml = strip_tags(htmlspecialchars_decode($_POST['faq_content'])); 
+		    	$trimcontent = strip_tags(html_entity_decode($_POST['faq_content'])); 
+		      
+		        $form_data = array(	
+					'faq_title' => $trimtitle,	
+					'faq_content' => $trimcontent,	
 					'show_on_home' => $_POST['show_on_home']
 	            );
 	            $this->Model_faq->update($id,$form_data);
