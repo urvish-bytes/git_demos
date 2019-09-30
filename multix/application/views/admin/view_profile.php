@@ -42,90 +42,89 @@
 					<li><a href="#tab_3" data-toggle="tab">Update Password</a></li>
 				</ul>
 				<div class="tab-content">
-
-      				<div class="tab-pane active" id="tab_1">						
+      				<div class="tab-pane active" id="tab_1">
 						<?php echo form_open(base_url().'admin/profile/update',array('class' => 'form-horizontal')); ?>
-						<div class="box box-info">
-							<div class="box-body">
-								<div class="form-group">
-									<label for="" class="col-sm-2 control-label">Email Address <span>*</span></label>
-									<div class="col-sm-4">
-										<input type="text" class="form-control" name="email" value="<?php echo $this->session->userdata('email'); ?>"> 
-									</div>			
-								</div>
-								<div class="form-group">
-									<label for="" class="col-sm-2 control-label">Role <span>*</span></label>
-									<div class="col-sm-4">
-										<!-- <?php echo $this->session->userdata('role'); ?> -->
-										<input type="text" class="form-control" value="<?php echo $this->session->userdata('role'); ?>" disabled> 
+							<div class="box box-info">
+								<div class="box-body">
+									<div class="form-group">
+										<label for="" class="col-sm-2 control-label">Email Address <span>*</span></label>
+										<div class="col-sm-4">
+											<input type="text" class="form-control" name="email" value="<?php echo $this->session->userdata('email'); ?>"> 
+										</div>			
 									</div>
-								</div>
-								<div class="form-group">
-									<label for="" class="col-sm-2 control-label"></label>
-									<div class="col-sm-6">
-										<button type="submit" class="btn btn-success pull-left" name="update_info">Update Information</button>
+									<div class="form-group">
+										<label for="" class="col-sm-2 control-label">Role <span>*</span></label>
+										<div class="col-sm-4">
+											<!-- <?php echo $this->session->userdata('role'); ?> -->
+											<input type="text" class="form-control" value="<?php echo $this->session->userdata('role'); ?>" disabled> 
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="" class="col-sm-2 control-label"></label>
+										<div class="col-sm-6">
+											<button type="submit" class="btn btn-success pull-left" name="update_info">Update Information</button>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 						<?php echo form_close(); ?>
       				</div>
 
       				<div class="tab-pane" id="tab_2">
 						<?php echo form_open_multipart(base_url().'admin/profile/update',array('class' => 'form-horizontal')); ?>
-						<div class="box box-info">
-							<div class="box-body">
-								<div class="form-group">
-						            <label for="" class="col-sm-2 control-label">Existing Photo</label>
-						            <div class="col-sm-6" style="padding-top:6px;">
-						            	<?php if($this->session->userdata('photo') ==''): ?>
-						            		<img src="<?php echo base_url(); ?>public/img/no-photo.jpg" class="existing-photo" alt="profile photo" width="140">
-						            	<?php else: ?>
-						            		 <img src="<?php echo base_url(); ?>public/uploads/<?php echo $this->session->userdata('photo'); ?>" class="existing-photo" width="140">
-						            	<?php endif; ?>							                
-						            </div>
-						        </div>
-								<div class="form-group">
-						            <label for="" class="col-sm-2 control-label">New Photo</label>
-						            <div class="col-sm-6" style="padding-top:6px;">
-						                <input type="file" name="photo">
-						            </div>
-						        </div>
-						        <div class="form-group">
-									<label for="" class="col-sm-2 control-label"></label>
-									<div class="col-sm-6">
-										<button type="submit" class="btn btn-success pull-left" name="update_photo">Update Photo</button>
+							<div class="box box-info">
+								<div class="box-body">
+									<div class="form-group">
+							            <label for="" class="col-sm-2 control-label">Existing Photo</label>
+							            <div class="col-sm-6" style="padding-top:6px;">
+							            	<?php if($this->session->userdata('photo') ==''): ?>
+							            		<img src="<?php echo base_url(); ?>public/img/no-photo.jpg" class="existing-photo" alt="profile photo" width="140">
+							            	<?php else: ?>
+							            		 <img src="<?php echo base_url(); ?>public/uploads/<?php echo $this->session->userdata('photo'); ?>" class="existing-photo" width="140">
+							            	<?php endif; ?>							                
+							            </div>
+							        </div>
+									<div class="form-group">
+							            <label for="" class="col-sm-2 control-label">New Photo</label>
+							            <div class="col-sm-6" style="padding-top:6px;">
+							                <input type="file" name="photo">
+							            </div>
+							        </div>
+							        <div class="form-group">
+										<label for="" class="col-sm-2 control-label"></label>
+										<div class="col-sm-6">
+											<button type="submit" class="btn btn-success pull-left" name="update_photo">Update Photo</button>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 						<?php echo form_close(); ?>
       				</div>
 
       				<div class="tab-pane" id="tab_3">
 						<?php echo form_open(base_url().'admin/profile/update',array('class' => 'form-horizontal')); ?>
-						<div class="box box-info">
-							<div class="box-body">
-								<div class="form-group">
-									<label for="" class="col-sm-2 control-label">Password </label>
-									<div class="col-sm-4">
-										<input type="password" class="form-control" name="password">
+							<div class="box box-info">
+								<div class="box-body">
+									<div class="form-group">
+										<label for="" class="col-sm-2 control-label">Password </label>
+										<div class="col-sm-4">
+											<input type="password" class="form-control" name="password">
+										</div>
 									</div>
-								</div>
-								<div class="form-group">
-									<label for="" class="col-sm-2 control-label">Retype Password </label>
-									<div class="col-sm-4">
-										<input type="password" class="form-control" name="re_password">
+									<div class="form-group">
+										<label for="" class="col-sm-2 control-label">Retype Password </label>
+										<div class="col-sm-4">
+											<input type="password" class="form-control" name="re_password">
+										</div>
 									</div>
-								</div>
-						        <div class="form-group">
-									<label for="" class="col-sm-2 control-label"></label>
-									<div class="col-sm-6">
-										<button type="submit" class="btn btn-success pull-left" name="update_pass">Update Password</button>
+							        <div class="form-group">
+										<label for="" class="col-sm-2 control-label"></label>
+										<div class="col-sm-6">
+											<button type="submit" class="btn btn-success pull-left" name="update_pass">Update Password</button>
+										</div>
 									</div>
 								</div>
 							</div>
-						</div>
 						<?php echo form_close(); ?>
       				</div>
       			</div>
