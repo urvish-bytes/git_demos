@@ -29,7 +29,7 @@ class Profile extends CI_Controller
 		if(isset($_POST['update_info'])) 
 		{
 			$valid = 1;
-			$this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email');
+			$this->form_validation->set_rules('email', 'Email Address', 'trim|required|valid_email|is_unique[tbl_user.email]');
 
 			if($this->form_validation->run() == FALSE) {
 				$valid = 0;
