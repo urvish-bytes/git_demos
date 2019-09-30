@@ -97,7 +97,7 @@ class Profile extends CI_Controller
 		{
 			$valid = 1;
 
-		    $this->form_validation->set_rules('password', 'Password', 'trim|required'); 
+		    $this->form_validation->set_rules('password', 'Password', 'trim|required|min_length[4]|max_length[12]|alpha_numeric'); 
 		    $this->form_validation->set_rules('re_password', 'Retype Password', 'trim|required|matches[password]'); 
 
 			if($this->form_validation->run() == FALSE) {
