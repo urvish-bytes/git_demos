@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Team extends CI_Controller {
+class Team extends CI_Controller 
+{
+
 	function __construct()
 	{
         parent::__construct();
@@ -28,4 +30,5 @@ class Team extends CI_Controller {
 		$this->load->view('view_team',$data);
 		$this->load->view('view_footer',$data);
 	}	
+
 }

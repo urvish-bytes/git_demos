@@ -45,9 +45,7 @@ class Service extends CI_Controller {
 
 		$data['services'] = $this->Model_service->all_service();
 		$data['service'] = $this->Model_service->service_detail($id);
-
 		$data['portfolio_footer'] = $this->Model_portfolio->get_portfolio_data();
-
 		$data['id'] = $id;
 
 		$this->load->view('view_header',$data);
@@ -57,13 +55,11 @@ class Service extends CI_Controller {
 
 	public function send_email() 
 	{
-
 		$data['setting'] = $this->Model_common->all_setting();
-
 		$error = '';
 
-		if(isset($_POST['form_service'])) {
-
+		if(isset($_POST['form_service'])) 
+		{
 			$valid = 1;
 
 			$this->form_validation->set_rules('name', 'Name', 'trim|required');
@@ -87,32 +83,25 @@ class Service extends CI_Controller {
 					<b>Service Name: </b> '.$_POST['service'].'<br><br>
 					<b>Message: </b> '.$_POST['message'].'
 				';
-            	$this->load->library('email');
 
+            	$this->load->library('email');
 				$this->email->from($data['setting']['send_email_from']);
 				$this->email->to($data['setting']['receive_email_to']);
-
 				$this->email->subject('Service Page Email');
 				$this->email->message($msg);
-
 				$this->email->set_mailtype("html");
-
 				$this->email->send();
 
 		        $success = 'Thank you for sending the email. We will reply you shortly.';
         		$this->session->set_flashdata('success',$success);
-
-		    } 
-		    else
-		    {
+		    } else {
         		$this->session->set_flashdata('error',$error);
 		    }
-
 			redirect($this->agent->referrer());
             
         } else {
-            
             redirect($this->agent->referrer());
         }
 	}
+
 }

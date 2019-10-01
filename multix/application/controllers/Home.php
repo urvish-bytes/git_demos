@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Home extends CI_Controller {
+class Home extends CI_Controller 
+{
+
 	function __construct()
 	{
         parent::__construct();
@@ -31,7 +33,6 @@ class Home extends CI_Controller {
 
 		$data['portfolio_category'] = $this->Model_portfolio->get_portfolio_category();
 		$data['portfolio'] = $this->Model_portfolio->get_portfolio_data();
-
 		$data['portfolio_footer'] = $this->Model_portfolio->get_portfolio_data();
 
 		$this->load->view('view_header',$data);
@@ -39,14 +40,13 @@ class Home extends CI_Controller {
 		$this->load->view('view_footer',$data);
 	}
 
-	public function send_email() {
-
+	public function send_email() 
+	{
 		$data['setting'] = $this->Model_common->all_setting();
-
 		$error = '';
 
-		if(isset($_POST['form_contact'])) {
-
+		if(isset($_POST['form_contact'])) 
+		{
 			$valid = 1;
 
 			if($_POST['pest_control'] == 'Pest Control') {
@@ -110,17 +110,14 @@ class Home extends CI_Controller {
 		        $success = 'Thank you for sending the email. We will contact with you shortly.';
         		$this->session->set_flashdata('success',$success);
 
-		    } 
-		    else
-		    {
+		    } else {
         		$this->session->set_flashdata('error',$error);
 		    }
-
 			redirect(base_url());
             
         } else {
-            
             redirect(base_url());
         }
 	}
+
 }

@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Pricing extends CI_Controller {
+class Pricing extends CI_Controller 
+{
+
 	function __construct()
 	{
         parent::__construct();
@@ -25,4 +27,5 @@ class Pricing extends CI_Controller {
 		$this->load->view('view_pricing',$data);
 		$this->load->view('view_footer',$data);
 	}
+
 }

@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Contact extends CI_Controller {
+class Contact extends CI_Controller 
+{
+
 	function __construct()
 	{
         parent::__construct();
@@ -28,13 +30,11 @@ class Contact extends CI_Controller {
 
 	public function send_email() 
 	{
-
 		$data['setting'] = $this->Model_common->all_setting();
-
 		$error = '';
 
-		if(isset($_POST['form_contact'])) {
-
+		if(isset($_POST['form_contact'])) 
+		{
 			$valid = 1;
 
 			$this->form_validation->set_rules('name', 'Name', 'trim|required');
@@ -63,28 +63,21 @@ class Contact extends CI_Controller {
 				$this->email->from($data['setting']['send_email_from']);
 				$this->email->to($data['setting']['receive_email_to']);
 				$this->email->reply_to($_POST['email'], $_POST['name']);
-
 				$this->email->subject('Contact Form Email');
 				$this->email->message($msg);
-
 				$this->email->set_mailtype("html");
-
 				$this->email->send();
 
 		        $success = 'Thank you for sending the email. We will contact you shortly.';
         		$this->session->set_flashdata('success',$success);
-
-		    } 
-		    else
-		    {
+		    } else {
         		$this->session->set_flashdata('error',$error);
 		    }
-
 			redirect(base_url().'contact');
             
         } else {
-            
             redirect(base_url().'contact');
         }
 	}
+
 }

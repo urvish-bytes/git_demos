@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Category extends CI_Controller {
+class Category extends CI_Controller 
+{
+
 	function __construct()
 	{
         parent::__construct();
@@ -21,7 +23,6 @@ class Category extends CI_Controller {
 			redirect(base_url());
 		}
 
-
 		$data['setting'] = $this->Model_common->all_setting();
 		$data['page_home'] = $this->Model_common->all_page_home();
 		$data['comment'] = $this->Model_common->all_comment();
@@ -31,11 +32,11 @@ class Category extends CI_Controller {
 		
 		$data['category'] = $this->Model_category->category_by_id($id);
 		$data['news_by_category'] = $this->Model_category->all_news_by_category_id($id);
-
 		$data['portfolio_footer'] = $this->Model_portfolio->get_portfolio_data();
 
 		$this->load->view('view_header',$data);
 		$this->load->view('view_category',$data);
 		$this->load->view('view_footer',$data);
 	}
+
 }

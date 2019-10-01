@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Portfolio extends CI_Controller {
+class Portfolio extends CI_Controller 
+{
 
 	function __construct() 
 	{
@@ -21,7 +22,6 @@ class Portfolio extends CI_Controller {
 
 		$data['portfolio_category'] = $this->Model_portfolio->get_portfolio_category();
 		$data['portfolio'] = $this->Model_portfolio->get_portfolio_data();
-
 		$data['portfolio_footer'] = $this->Model_portfolio->get_portfolio_data();
 
 		$this->load->view('view_header',$data);
@@ -39,11 +39,9 @@ class Portfolio extends CI_Controller {
 		$data['all_news'] = $this->Model_common->all_news();
 
 		$data['portfolio_order_by_name'] = $this->Model_portfolio->get_portfolio_data_order_by_name();
-
 		$data['portfolio'] = $this->Model_portfolio->get_portfolio_detail($id);
 		$data['portfolio_photo'] = $this->Model_portfolio->get_portfolio_photo($id);
 		$data['portfolio_photo_total'] = $this->Model_portfolio->get_portfolio_photo_number($id);
-
 		$data['portfolio_footer'] = $this->Model_portfolio->get_portfolio_data();
 
 		$this->load->view('view_header',$data);
@@ -53,13 +51,11 @@ class Portfolio extends CI_Controller {
 
 	public function send_email() 
 	{
-
 		$data['setting'] = $this->Model_common->all_setting();
-
 		$error = '';
 
-		if(isset($_POST['form_portfolio'])) {
-
+		if(isset($_POST['form_portfolio'])) 
+		{
 			$valid = 1;
 
 			$this->form_validation->set_rules('name', 'Name', 'trim|required');
@@ -98,17 +94,14 @@ class Portfolio extends CI_Controller {
 		        $success = 'Thank you for sending the email. We will reply you shortly.';
         		$this->session->set_flashdata('success',$success);
 
-		    } 
-		    else
-		    {
+		    } else {
         		$this->session->set_flashdata('error',$error);
 		    }
-
 			redirect($this->agent->referrer());
             
         } else {
-            
             redirect($this->agent->referrer());
         }
 	}
+
 }

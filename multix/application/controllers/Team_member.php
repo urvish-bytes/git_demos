@@ -1,7 +1,9 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Team_member extends CI_Controller {
+class Team_member extends CI_Controller 
+{
+
 	function __construct()
 	{
         parent::__construct();
@@ -34,13 +36,12 @@ class Team_member extends CI_Controller {
 
 		$data['team_members'] = $this->Model_team_member->all_team_member();
 		$data['member'] = $this->Model_team_member->team_member_detail($id);
-
 		$data['portfolio_footer'] = $this->Model_portfolio->get_portfolio_data();
-
 		$data['id'] = $id;
 
 		$this->load->view('view_header',$data);
 		$this->load->view('view_team_member',$data);
 		$this->load->view('view_footer');
 	}
+
 }
