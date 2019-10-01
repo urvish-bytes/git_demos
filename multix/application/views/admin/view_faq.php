@@ -67,7 +67,6 @@
 					</table>
 				</div>
 			</div>
-
 </section>
 
 <!-- Success msg fadeout -->

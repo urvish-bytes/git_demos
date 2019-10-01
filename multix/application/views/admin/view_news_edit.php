@@ -60,7 +60,6 @@
 								<input type="text" class="form-control" name="news_date" id="datepicker" value="<?php echo $news['news_date']; ?>">(Format: yy-mm-dd)
 							</div>
 						</div>
-						
 						<div class="form-group">
 				            <label for="" class="col-sm-2 control-label">Categories <span>*</span></label>
 				            <div class="col-sm-3">
@@ -76,7 +75,6 @@
 								</select>
 				            </div>
 				        </div>
-
 				        <div class="form-group">
 				            <label for="" class="col-sm-2 control-label">Comment <span>*</span></label>
 				            <div class="col-sm-3">
@@ -153,5 +151,4 @@
 			<?php echo form_close(); ?>
 		</div>
 	</div>
-
 </section>

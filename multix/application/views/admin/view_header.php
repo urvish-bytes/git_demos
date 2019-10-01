@@ -21,7 +21,6 @@
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/admin/css/magnific-popup.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/admin/css/style.css">
 	<link rel="stylesheet" href="<?php echo base_url(); ?>public/admin/css/main_header.css">
-
 </head>
 
 <body class="hold-transition fixed skin-blue sidebar-mini">

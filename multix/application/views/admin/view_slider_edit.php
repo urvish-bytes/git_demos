@@ -17,20 +17,20 @@ if(!$this->session->userdata('id')) {
 	<div class="row">
 		<div class="col-md-12">
 			<?php
-	        if($this->session->flashdata('error')) {
-	            ?>
-				<div class="callout callout-danger">
-					<p><?php echo $this->session->flashdata('error'); ?></p>
-				</div>
-	            <?php
-	        }
-	        if($this->session->flashdata('success')) {
-	            ?>
-				<div class="callout callout-success">
-					<p><?php echo $this->session->flashdata('success'); ?></p>
-				</div>
-	            <?php
-	        }
+		        if($this->session->flashdata('error')) {
+		            ?>
+					<div class="callout callout-danger">
+						<p><?php echo $this->session->flashdata('error'); ?></p>
+					</div>
+		            <?php
+		        }
+		        if($this->session->flashdata('success')) {
+		            ?>
+					<div class="callout callout-success">
+						<p><?php echo $this->session->flashdata('success'); ?></p>
+					</div>
+		            <?php
+		        }
 	        ?>
 
 			<?php echo form_open_multipart(base_url().'admin/slider/edit/'.$slider['id'], array('class' => 'form-horizontal'));?>
@@ -104,5 +104,4 @@ if(!$this->session->userdata('id')) {
 			<?php echo form_close(); ?>
 		</div>
 	</div>
-
 </section>

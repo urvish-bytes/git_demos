@@ -44,35 +44,32 @@
 	        ?>
 
 	        <?php echo form_open(base_url().'admin/language',array('class' => 'form-horizontal')); ?>
+		        <div class="box box-info">
+		            <div class="box-body">
+		            	<p style="color:red;">
+							NB: In this section, you will be able to change those text in your language that are not possible to change from other sections.
+						</p>
 
-	        <div class="box box-info">
-	            <div class="box-body">
-	            	<p style="color:red;">
-						NB: In this section, you will be able to change those text in your language that are not possible to change from other sections.
-					</p>
+						<?php for($i=0;$i<count($arr1);$i++): ?>
+			                <div class="form-group">
+			                    <label for="" class="col-sm-4 control-label"><?php echo $arr2[$i]; ?></label>
+			                    <div class="col-sm-7">
+			                        <input type="text" class="form-control" name="new_arr[]" value="<?php echo $arr3[$i]; ?>">
+			                    </div>
+			                </div>
+			                <input type="hidden" name="new_arr1[]" value="<?php echo $arr1[$i]; ?>">
+		            	<?php endfor; ?>
 
-					<?php for($i=0;$i<count($arr1);$i++): ?>
 		                <div class="form-group">
-		                    <label for="" class="col-sm-4 control-label"><?php echo $arr2[$i]; ?></label>
+		                	<label for="" class="col-sm-4 control-label"></label>
 		                    <div class="col-sm-7">
-		                        <input type="text" class="form-control" name="new_arr[]" value="<?php echo $arr3[$i]; ?>">
+		                      	<button type="submit" class="btn btn-success pull-left" name="form1">Update</button>
 		                    </div>
 		                </div>
-		                <input type="hidden" name="new_arr1[]" value="<?php echo $arr1[$i]; ?>">
-	            	<?php endfor; ?>
-
-	                <div class="form-group">
-	                	<label for="" class="col-sm-4 control-label"></label>
-	                    <div class="col-sm-7">
-	                      <button type="submit" class="btn btn-success pull-left" name="form1">Update</button>
-	                    </div>
-	                </div>
-	            </div>
-	        </div>
-
+		            </div>
+		        </div>
 	        <?php echo form_close(); ?>
 
 	    </div>
   	</div>
-
 </section>

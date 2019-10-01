@@ -75,8 +75,7 @@
 					</table>
 				</div>
 			</div>
-
-		</section>
+</section>
 
 <!-- Success msg fadeout -->
 <script>

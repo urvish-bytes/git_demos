@@ -1,6 +1,6 @@
 <?php
 	if(!$this->session->userdata('id')) {
-	    redirect(base_url().'admin');
+		redirect(base_url().'admin');
 	}
 ?>
 
@@ -17,17 +17,17 @@
 	<div class="row">
 		<div class="col-md-12">
 			<?php if($error): ?>
-			<div class="callout callout-danger">
-				<p>
-					<?php echo $error; ?>
-				</p>
-			</div>
+				<div class="callout callout-danger">
+					<p>
+						<?php echo $error; ?>
+					</p>
+				</div>
 			<?php endif; ?>
 
 			<?php if($success): ?>
-			<div class="callout callout-success">
-				<p><?php echo $success; ?></p>
-			</div>
+				<div class="callout callout-success">
+					<p><?php echo $success; ?></p>
+				</div>
 			<?php endif; ?>
 
 			<?php echo form_open_multipart(base_url().'admin/partner/add',array('class' => 'form-horizontal')); ?>
@@ -56,5 +56,4 @@
 			<?php echo form_close(); ?>
 		</div>
 	</div>
-
 </section>

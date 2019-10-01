@@ -71,13 +71,14 @@
 </section>
 
 <script type="text/javascript">
-	// window.onbeforeunload = function(){ 
- //  		return 'Are you sure you want to leave?'; 
-	// }; 
+	window.onbeforeunload = function(){ 
+   		return 'Are you sure you want to leave?'; 
+	}; 
  
-	// $(window).bind("beforeunload",function(event) { 
- //    	if(hasChanged) return "You have unsaved changes"; 
-	// }); 
+	$(window).bind("beforeunload",function(event) { 
+ 		if(hasChanged)
+ 			return "You have unsaved changes"; 
+	}); 
 
 </script>
 

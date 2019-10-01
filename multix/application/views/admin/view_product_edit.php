@@ -33,7 +33,7 @@
 				}
 			?>
 
-			<?php echo form_open(base_url().'admin/product/edit/'.$product['product_id'],array('class' => 'form-horizontal')); ?> 
+			<?php echo form_open(base_url().'admin/product/edit/'.$product['product_id'],array('class' => 'form-horizontal')); ?>
 				<div class="box box-info">
 					<div class="box-body">
 						<div class="form-group">
@@ -45,14 +45,12 @@
 						<div class="form-group">
 							<label for="" class="col-sm-2 control-label">Product Description <span>*</span></label>
 							<div class="col-sm-9">
-								
 								<!-- Value get but validation not working -->
 									<!-- <textarea class="form-control editor" name="product_desc"><?php echo $product['product_desc']; ?></textarea> -->
-									
 								<!-- Validation working but value is not get in edit -->
 									<!-- <textarea class="form-control editor" name="product_desc"><?php echo set_value('product_desc'); ?></textarea>  -->
 
-									<?= form_textarea(array('class'=>'form-control editor', 'name'=>'product_desc'), set_value('product_desc',$product['product_desc'])); ?>
+								<?= form_textarea(array('class'=>'form-control editor', 'name'=>'product_desc'), set_value('product_desc',$product['product_desc'])); ?>
 							</div>
 						</div>
 						<div class="form-group">

@@ -34,28 +34,28 @@
 			?>
 
 			<?php echo form_open_multipart(base_url().'admin/photo/edit/'.$photo['photo_id'],array('class' => 'form-horizontal')); ?>
-			<div class="box box-info">
-				<div class="box-body">
-					<div class="form-group">
-						<label for="" class="col-sm-2 control-label">Existing Photo</label>
-						<div class="col-sm-6" style="padding-top:6px;">
-							<img src="<?php echo base_url(); ?>public/uploads/<?php echo $photo['photo_name']; ?>" class="existing-photo" style="width:300px;">
+				<div class="box box-info">
+					<div class="box-body">
+						<div class="form-group">
+							<label for="" class="col-sm-2 control-label">Existing Photo</label>
+							<div class="col-sm-6" style="padding-top:6px;">
+								<img src="<?php echo base_url(); ?>public/uploads/<?php echo $photo['photo_name']; ?>" class="existing-photo" style="width:300px;">
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="" class="col-sm-2 control-label">Upload New Photo <span>*</span></label>
-						<div class="col-sm-4" style="padding-top:6px;">
-							<input type="file" name="photo"> (Only jpg, jpeg, gif and png are allowed)
+						<div class="form-group">
+							<label for="" class="col-sm-2 control-label">Upload New Photo <span>*</span></label>
+							<div class="col-sm-4" style="padding-top:6px;">
+								<input type="file" name="photo"> (Only jpg, jpeg, gif and png are allowed)
+							</div>
 						</div>
-					</div>
-					<div class="form-group">
-						<label for="" class="col-sm-2 control-label"></label>
-						<div class="col-sm-6">
-							<button type="submit" class="btn btn-success pull-left" name="form1">Update</button>
+						<div class="form-group">
+							<label for="" class="col-sm-2 control-label"></label>
+							<div class="col-sm-6">
+								<button type="submit" class="btn btn-success pull-left" name="form1">Update</button>
+							</div>
 						</div>
 					</div>
 				</div>
-			</div>
 			<?php echo form_close(); ?>
 		</div>
 	</div>
