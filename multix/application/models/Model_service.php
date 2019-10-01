@@ -3,8 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Model_service extends CI_Model 
 {
-    public function all_service()
-    {
+
+    public function all_service() {
         $query = $this->db->query("SELECT * FROM tbl_service ORDER BY id ASC");
         return $query->result_array();
     }
@@ -20,4 +20,5 @@ class Model_service extends CI_Model
         $query = $this->db->query($sql,array($id));
         return $query->first_row('array');
     }
+
 }

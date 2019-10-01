@@ -3,8 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Model_newsletter extends CI_Model 
 {
-    public function total_subscriber_by_email($email)
-    {
+    
+    public function total_subscriber_by_email($email) {
         $query = $this->db->query("SELECT * FROM tbl_subscriber WHERE subs_email=?",array($email));
         return $query->num_rows();
     }
@@ -25,4 +25,5 @@ class Model_newsletter extends CI_Model
         $this->db->where('subs_hash',$hash);
         $this->db->update('tbl_subscriber',$data);
     }
+
 }

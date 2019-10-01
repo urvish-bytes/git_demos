@@ -3,8 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Model_search extends CI_Model 
 {
-    public function search($search_string)
-    {
+
+    public function search($search_string) {
         $search_string = '%' . $search_string . '%';
         $sql = "SELECT * 
                 FROM tbl_news t1
@@ -15,8 +15,8 @@ class Model_search extends CI_Model
         $query = $this->db->query($sql,array($search_string,$search_string));
         return $query->result_array();
     }
-    public function search_total($search_string)
-    {
+
+    public function search_total($search_string) {
         $search_string = '%' . $search_string . '%';
         $sql = "SELECT * 
                 FROM tbl_news t1
@@ -27,4 +27,5 @@ class Model_search extends CI_Model
         $query = $this->db->query($sql,array($search_string,$search_string));
         return $query->num_rows();
     }
+
 }

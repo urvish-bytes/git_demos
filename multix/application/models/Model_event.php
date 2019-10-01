@@ -3,21 +3,19 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Model_event extends CI_Model 
 {
-    public function all_event()
-    {
+
+    public function all_event() {
         $query = $this->db->query("SELECT * FROM tbl_event ORDER BY event_id DESC");
         return $query->result_array();
     }
 
-    public function event_check($id)
-    {
+    public function event_check($id) {
         $sql = 'SELECT * FROM tbl_event WHERE event_id=?';
         $query = $this->db->query($sql,array($id));
         return $query->num_rows();
     }
 
-    public function event_detail($id)
-    {
+    public function event_detail($id) {
         $sql = 'SELECT * FROM tbl_event WHERE event_id=?';
         $query = $this->db->query($sql,array($id));
         return $query->first_row('array');
@@ -44,4 +42,5 @@ class Model_event extends CI_Model
         }
         return false;
     }
+
 }

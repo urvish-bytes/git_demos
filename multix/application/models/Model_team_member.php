@@ -3,8 +3,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Model_team_member extends CI_Model 
 {
-    public function all_team_member()
-    {
+
+    public function all_team_member() {
         $query = $this->db->query("SELECT * FROM tbl_team_member ORDER BY id ASC");
         return $query->result_array();
     }
@@ -20,4 +20,5 @@ class Model_team_member extends CI_Model
         $query = $this->db->query($sql,array($id));
         return $query->first_row('array');
     }
+
 }
