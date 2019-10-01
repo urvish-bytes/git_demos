@@ -20,21 +20,18 @@ class Model_feature extends CI_Model
         $this->db->update('tbl_feature',$data);
     }
 
-    function delete($id)
-    {
+    function delete($id) {
         $this->db->where('id',$id);
         $this->db->delete('tbl_feature');
     }
 
-    function getData($id)
-    {
+    function getData($id) {
         $sql = 'SELECT * FROM tbl_feature WHERE id=?';
         $query = $this->db->query($sql,array($id));
         return $query->first_row('array');
     }
 
-    function feature_check($id)
-    {
+    function feature_check($id) {
         $sql = 'SELECT * FROM tbl_feature WHERE id=?';
         $query = $this->db->query($sql,array($id));
         return $query->first_row('array');

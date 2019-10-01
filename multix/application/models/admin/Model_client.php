@@ -4,8 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Model_client extends CI_Model 
 {
 
-	function get_auto_increment_id()
-    {
+	function get_auto_increment_id() {
         $sql = "SHOW TABLE STATUS LIKE 'tbl_client'";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -27,21 +26,18 @@ class Model_client extends CI_Model
         $this->db->update('tbl_client',$data);
     }
 
-    function delete($id)
-    {
+    function delete($id) {
         $this->db->where('id',$id);
         $this->db->delete('tbl_client');
     }
 
-    function get_client($id)
-    {
+    function get_client($id) {
         $sql = 'SELECT * FROM tbl_client WHERE id=?';
         $query = $this->db->query($sql,array($id));
         return $query->first_row('array');
     }
 
-    function client_check($id)
-    {
+    function client_check($id) {
         $sql = 'SELECT * FROM tbl_client WHERE id=?';
         $query = $this->db->query($sql,array($id));
         return $query->first_row('array');

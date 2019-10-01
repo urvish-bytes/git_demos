@@ -3,8 +3,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Model_common extends CI_Model 
 {
-	public function get_setting_data()
-    {
+	public function get_setting_data() {
         $query = $this->db->query("SELECT * from tbl_settings WHERE id=1");
         return $query->first_row('array');
     }
@@ -16,14 +15,13 @@ class Model_common extends CI_Model
     		return true;
     	}
     }
-    public function get_language_data()
-    {
+
+    public function get_language_data() {
         $query = $this->db->query("SELECT * from tbl_language");
         return $query->result_array();
     }
 
     public function image_handler($source_image,$destination,$tn_w = 100,$tn_h = 100,$quality = 80) {
-        
         $info = getimagesize($source_image);
         $imgtype = image_type_to_mime_type($info[2]);
 
@@ -52,6 +50,7 @@ class Model_common extends CI_Model
             $new_w = $tn_h*$src_ratio;
             $new_h = $tn_h;
         }
+        
         $x_mid = $new_w/2;
         $y_mid = $new_h/2;
 
@@ -64,4 +63,5 @@ class Model_common extends CI_Model
         }
         return false;
     }
+    
 }

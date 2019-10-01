@@ -4,8 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Model_category extends CI_Model 
 {
     
-	function get_auto_increment_id()
-    {
+	function get_auto_increment_id() {
         $sql = "SHOW TABLE STATUS LIKE 'tbl_category'";
         $query = $this->db->query($sql);
         return $query->result_array();
@@ -27,21 +26,18 @@ class Model_category extends CI_Model
         $this->db->update('tbl_category',$data);
     }
 
-    function delete($id)
-    {
+    function delete($id) {
         $this->db->where('category_id',$id);
         $this->db->delete('tbl_category');
     }
 
-    function get_category($id)
-    {
+    function get_category($id) {
         $sql = 'SELECT * FROM tbl_category WHERE category_id=?';
         $query = $this->db->query($sql,array($id));
         return $query->first_row('array');
     }
 
-    function category_check($id)
-    {
+    function category_check($id) {
         $sql = 'SELECT * FROM tbl_category WHERE category_id=?';
         $query = $this->db->query($sql,array($id));
         return $query->first_row('array');
