@@ -60,7 +60,6 @@ class Photo extends CI_Controller
 					'photo_name' => $final_name
 	            );
 	            $this->Model_photo->add($form_data);
-
 		        $success = 'Photo is added successfully!';
 		        $this->session->set_flashdata('success',$success);
 				redirect(base_url().'admin/photo');
@@ -69,6 +68,7 @@ class Photo extends CI_Controller
 		    	$this->session->set_flashdata('error',$error);
 				redirect(base_url().'admin/photo/add');
 		    }
+		    
         } else {            
             $this->load->view('admin/view_header',$data);
 			$this->load->view('admin/view_photo_add',$data);

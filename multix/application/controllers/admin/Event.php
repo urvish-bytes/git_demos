@@ -112,6 +112,7 @@ class Event extends CI_Controller
 		    	$this->session->set_flashdata('error',$error);
 				redirect(base_url().'admin/event/add');
 		    }
+
         } else {
             $this->load->view('admin/view_header',$data);
 			$this->load->view('admin/view_event_add',$data);
@@ -194,6 +195,7 @@ class Event extends CI_Controller
 		            );
 		            $this->Model_event->update($id,$form_data);
 				}
+
 				if($path != '' && $path1 == '') {
 					unlink('./public/uploads/'.$data['event']['photo']);
 
@@ -215,6 +217,7 @@ class Event extends CI_Controller
 		            );
 		            $this->Model_event->update($id,$form_data);
 				}
+
 				if($path == '' && $path1 != '') {
 					unlink('./public/uploads/'.$data['event']['banner']);
 
@@ -236,6 +239,7 @@ class Event extends CI_Controller
 		            );
 		            $this->Model_event->update($id,$form_data);
 				}
+
 				if($path != '' && $path1 != '') {
 
 					unlink('./public/uploads/'.$data['event']['photo']);
@@ -271,6 +275,7 @@ class Event extends CI_Controller
 		    	$this->session->set_flashdata('error',$error);
 				redirect(base_url().'admin/event/add');
 		    }
+		    
 		} else {
 			$data['event'] = $this->Model_event->getData($id);
             $this->load->view('admin/view_header',$data);

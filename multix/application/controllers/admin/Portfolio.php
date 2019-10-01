@@ -85,7 +85,6 @@ class Portfolio extends CI_Controller
 	            );
 	            $this->Model_portfolio->add($form_data);
 
-
 	            if( isset($_FILES['photos']["name"]) && isset($_FILES['photos']["tmp_name"]))
 		        {
 		            $photos = array();
@@ -248,7 +247,6 @@ class Portfolio extends CI_Controller
 			        }
 
 		            $z = $ai_id1;
-
 		            $m=0;
 		            $final_names = array();
 		            for($i=0;$i<count($photos);$i++)

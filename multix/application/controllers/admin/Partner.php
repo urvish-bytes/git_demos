@@ -13,7 +13,6 @@ class Partner extends CI_Controller
 	public function index()
 	{
 		$header['setting'] = $this->Model_header->get_setting_data();
-
 		$data['partner'] = $this->Model_partner->show();
 
 		$this->load->view('admin/view_header',$header);

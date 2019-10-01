@@ -65,7 +65,8 @@ class Forget_password extends CI_Controller
             } else {
                 $this->session->set_flashdata('error',$error);
 				redirect(base_url().'admin/forget_password');
-            }            
+            }
+                        
         } else {
             $this->load->view('admin/view_forget_password',$data);    
         }

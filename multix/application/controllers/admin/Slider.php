@@ -14,7 +14,6 @@ class Slider extends CI_Controller
 	public function index()
 	{
 		$data['setting'] = $this->Model_common->get_setting_data();
-
 		$data['slider'] = $this->Model_slider->show();
 
 		$this->load->view('admin/view_header',$data);
@@ -25,7 +24,6 @@ class Slider extends CI_Controller
 	public function add()
 	{
 		$data['setting'] = $this->Model_common->get_setting_data();
-
 		$error = '';
 		$success = '';
 
@@ -77,6 +75,7 @@ class Slider extends CI_Controller
 		    	$this->session->set_flashdata('error',$error);
 	            redirect(base_url().'admin/slider/add');
 		    }
+		    
         } else {
             $this->load->view('admin/view_header',$data);
 			$this->load->view('admin/view_slider_add',$data);

@@ -24,7 +24,6 @@ class Team_member extends CI_Controller
 	public function add()
 	{
 		$data['setting'] = $this->Model_common->get_setting_data();
-
 		$error = '';
 		$success = '';
 
@@ -95,9 +94,7 @@ class Team_member extends CI_Controller
 		        $success = 'Team Member is added successfully!';
 				$this->session->set_flashdata('success',$success);
 		    	redirect(base_url().'admin/team_member');
-		    } 
-		    else
-		    {
+		    } else {
 		    	$this->session->set_flashdata('error',$error);
 		    	redirect(base_url().'admin/team_member/add');
 		    }
@@ -209,7 +206,8 @@ class Team_member extends CI_Controller
 		    } else {
 		    	$this->session->set_flashdata('error',$error);
 		    	redirect(base_url().'admin/team_member/edit/'.$id);
-		    }           
+		    }
+		               
 		} else {
 			$data['team_member'] = $this->Model_team_member->get_team_member($id);
             $this->load->view('admin/view_header',$data);

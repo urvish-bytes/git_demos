@@ -35,11 +35,9 @@ class Language extends CI_Controller
 			}
 
     		$success = 'Language data is updated successfully';
-		    
 		    $data['language'] = $this->Model_language->show();
 	       	$this->session->set_flashdata('success',$success);
 			redirect(base_url().'admin/language');
-           
 		} else {
 			$data['language'] = $this->Model_language->show();
 	       	$this->load->view('admin/view_header',$data);

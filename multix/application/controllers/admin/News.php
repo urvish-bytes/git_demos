@@ -108,6 +108,7 @@ class News extends CI_Controller
 		    	$this->session->set_flashdata('error',$error);
 				redirect(base_url().'admin/news/add');
 		    }
+
         } else {
             $data['all_category'] = $this->Model_news->get_category();
             $this->load->view('admin/view_header',$data);
@@ -186,6 +187,7 @@ class News extends CI_Controller
 		            );
 		            $this->Model_news->update($id,$form_data);
 				}
+
 				if($path != '' && $path1 == '') {
 					unlink('./public/uploads/'.$data['news']['photo']);
 
@@ -206,6 +208,7 @@ class News extends CI_Controller
 		            );
 		            $this->Model_news->update($id,$form_data);
 				}
+
 				if($path == '' && $path1 != '') {
 					unlink('./public/uploads/'.$data['news']['banner']);
 
@@ -226,6 +229,7 @@ class News extends CI_Controller
 		            );
 		            $this->Model_news->update($id,$form_data);
 				}
+
 				if($path != '' && $path1 != '') {
 
 					unlink('./public/uploads/'.$data['news']['photo']);
@@ -260,6 +264,7 @@ class News extends CI_Controller
 		    	$this->session->set_flashdata('error',$error);
 				redirect(base_url().'admin/news/add');
 		    }
+		    
 		} else {
 			$data['news'] = $this->Model_news->getData($id);
 			$data['all_category'] = $this->Model_news->get_category();

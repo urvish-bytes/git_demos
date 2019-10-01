@@ -58,6 +58,7 @@ class Faq extends CI_Controller
 		    	$this->session->set_flashdata('error',$error);
 				redirect(base_url().'admin/faq/add');
 		    }
+
         } else {
             $this->load->view('admin/view_header',$data);
 			$this->load->view('admin/view_faq_add',$data);
@@ -111,6 +112,7 @@ class Faq extends CI_Controller
 		    	$this->session->set_flashdata('error',$error);
 				redirect(base_url().'admin/faq/add');
 		    }
+		    
 		} else {
 			$data['faq'] = $this->Model_faq->getData($id);
 	       	$this->load->view('admin/view_header',$data);

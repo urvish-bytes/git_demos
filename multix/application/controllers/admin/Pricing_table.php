@@ -64,6 +64,7 @@ class Pricing_table extends CI_Controller
 		    	$this->session->set_flashdata('error',$error);
 				redirect(base_url().'admin/pricing_table/add');
 		    }
+
         } else {
             $this->load->view('admin/view_header',$data);
 			$this->load->view('admin/view_pricing_table_add',$data);

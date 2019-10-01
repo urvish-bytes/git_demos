@@ -56,6 +56,7 @@ class Feature extends CI_Controller
 		    	$this->session->set_flashdata('error',$error);
 				redirect(base_url().'admin/feature/add');
 		    }
+
         } else {
             $this->load->view('admin/view_header',$data);
 			$this->load->view('admin/view_feature_add',$data);
@@ -102,9 +103,7 @@ class Feature extends CI_Controller
 				$success = 'Feature is updated successfully';
 				$this->session->set_flashdata('success',$success);
 				redirect(base_url().'admin/feature');
-		    }
-		    else
-		    {
+		    } else {
 		    	$this->session->set_flashdata('error',$error);
 				redirect(base_url().'admin/feature/edit/'.$id);
 		    }

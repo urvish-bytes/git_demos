@@ -33,9 +33,9 @@ class Page extends CI_Controller
 
 		$this->load->view('admin/view_header',$data);
 		$this->load->view('admin/view_page',$data);
-		$this->load->view('admin/view_footer');
-		
+		$this->load->view('admin/view_footer');		
 	}
+	
 	public function update()
 	{
 		$error = '';

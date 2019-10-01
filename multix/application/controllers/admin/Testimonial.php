@@ -81,7 +81,6 @@ class Testimonial extends CI_Controller
 				redirect(base_url().'admin/testimonial/add');
 		    }
         } else {
-            
             $this->load->view('admin/view_header',$data);
 			$this->load->view('admin/view_testimonial_add',$data);
 			$this->load->view('admin/view_footer');

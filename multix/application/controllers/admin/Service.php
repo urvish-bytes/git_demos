@@ -106,7 +106,6 @@ class Service extends CI_Controller
 		$error = '';
 		$success = '';
 
-
 		if(isset($_POST['edit'])) 
 		{
 			$valid = 1;

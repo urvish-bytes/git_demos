@@ -65,7 +65,6 @@ class Setting extends CI_Controller
 		    }
 		}
 
-
 		if(isset($_POST['form_favicon']))
 		{
 			$valid = 1;

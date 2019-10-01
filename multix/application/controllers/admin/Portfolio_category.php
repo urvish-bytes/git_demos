@@ -51,6 +51,7 @@ class Portfolio_category extends CI_Controller
 		    	$this->session->set_flashdata('error',$error);
 				redirect(base_url().'admin/portfolio_category/add');
 		    }
+		    
         } else {
             $this->load->view('admin/view_header',$data);
 			$this->load->view('admin/view_portfolio_category_add',$data);

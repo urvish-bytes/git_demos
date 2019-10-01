@@ -76,6 +76,7 @@ class Client extends CI_Controller
 		    	$this->session->set_flashdata('error',$error);
 				redirect(base_url().'admin/client/add');
 		    }
+		    
         } else {
             $this->load->view('admin/view_header',$data);
 			$this->load->view('admin/view_client_add',$data);
