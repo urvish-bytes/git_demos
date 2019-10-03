@@ -18,11 +18,11 @@
                     <ul id="filtrnav">
                         <li class="filtr filtr-active" data-filter="all"><?php echo ALL; ?></li>
                         <?php
-                        foreach ($portfolio_category as $row) {
-                            ?>
-                            <li class="filtr" data-filter="<?php echo $row['category_id']; ?>"><?php echo $row['category_name']; ?></li>
-                            <?php
-                        }
+                            foreach ($portfolio_category as $row) {
+                                ?>
+                                <li class="filtr" data-filter="<?php echo $row['category_id']; ?>"><?php echo $row['category_name']; ?></li>
+                                <?php
+                            }
                         ?>
                     </ul>
                 </div>
@@ -30,25 +30,25 @@
         </div>
         <div class="row filtr-container">
             <?php
-            foreach ($portfolio as $row) {
-                ?>
-                <div class="col-lg-4 col-md-6 filtr-item" data-category="<?php echo $row['category_id']; ?>" data-sort="Menu">
-                    <div class="portfolio-group">
-                        <div class="portfolio-photo" style="background-image: url(<?php echo base_url(); ?>public/uploads/<?php echo $row['photo']; ?>)">
-                            <div class="portfolio-bg"></div>
-                            <div class="portfolio-table">
-                                <div class="portfolio-icon">
-                                    <a href="<?php echo base_url(); ?>public/uploads/<?php echo $row['photo']; ?>" class="magnific"><i class="fa fa-search-plus"></i></a>
+                foreach ($portfolio as $row) {
+                    ?>
+                    <div class="col-lg-4 col-md-6 filtr-item" data-category="<?php echo $row['category_id']; ?>" data-sort="Menu">
+                        <div class="portfolio-group">
+                            <div class="portfolio-photo" style="background-image: url(<?php echo base_url(); ?>public/uploads/<?php echo $row['photo']; ?>)">
+                                <div class="portfolio-bg"></div>
+                                <div class="portfolio-table">
+                                    <div class="portfolio-icon">
+                                        <a href="<?php echo base_url(); ?>public/uploads/<?php echo $row['photo']; ?>" class="magnific"><i class="fa fa-search-plus"></i></a>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="portfolio-text">
-                            <h3><a href="<?php echo base_url(); ?>portfolio/view/<?php echo $row['id']; ?>"><?php echo $row['name']; ?></a></h3>
+                            <div class="portfolio-text">
+                                <h3><a href="<?php echo base_url(); ?>portfolio/view/<?php echo $row['id']; ?>"><?php echo $row['name']; ?></a></h3>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <?php
-            }
+                    <?php
+                }
             ?>
         </div>
     </div>

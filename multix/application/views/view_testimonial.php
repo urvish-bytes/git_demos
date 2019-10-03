@@ -14,26 +14,26 @@
     <div class="container">
         <div class="row">
             <?php
-            foreach ($testimonials as $row) {
-                ?>
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-item mt_30">
-                        <div class="testimonial-photo">
-                            <img src="<?php echo base_url(); ?>public/uploads/<?php echo $row['photo']; ?>" alt="">
-                        </div>
-                        <div class="testimonial-name">
-                            <h4><?php echo $row['name']; ?></h4>
-                            <p><?php echo $row['designation']; ?></p>
-                        </div>
-                        <div class="testimonial-description">
-                            <p>
-                                <?php echo nl2br($row['comment']); ?>
-                            </p>
+                foreach ($testimonials as $row) {
+                    ?>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="testimonial-item mt_30">
+                            <div class="testimonial-photo">
+                                <img src="<?php echo base_url(); ?>public/uploads/<?php echo $row['photo']; ?>" alt="">
+                            </div>
+                            <div class="testimonial-name">
+                                <h4><?php echo $row['name']; ?></h4>
+                                <p><?php echo $row['designation']; ?></p>
+                            </div>
+                            <div class="testimonial-description">
+                                <p>
+                                    <?php echo nl2br($row['comment']); ?>
+                                </p>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <?php
-            }
+                    <?php
+                }
             ?>
         </div>
     </div>

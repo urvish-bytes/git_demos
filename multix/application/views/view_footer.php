@@ -28,12 +28,12 @@
                             <?php echo nl2br($setting['newsletter_text']); ?>
                         </p>
                         <?php
-                        if($this->session->flashdata('error')) {
-                            echo '<div class="error-class">'.$this->session->flashdata('error').'</div>';
-                        }
-                        if($this->session->flashdata('success')) {
-                            echo '<div class="success-class">'.$this->session->flashdata('success').'</div>';
-                        }
+                            if($this->session->flashdata('error')) {
+                                echo '<div class="error-class">'.$this->session->flashdata('error').'</div>';
+                            }
+                            if($this->session->flashdata('success')) {
+                                echo '<div class="success-class">'.$this->session->flashdata('success').'</div>';
+                            }
                         ?>
                         <?php echo form_open(base_url().'newsletter/send',array('class' => '')); ?>
                         <div class="input-group">                            
@@ -50,16 +50,16 @@
                         <h3><?php echo $setting['footer_col2_title']; ?></h3>
                         <ul>
                             <?php
-                            $i=0;
-                            foreach ($all_news as $news) {
-                                $i++;
-                                if($i > $setting['footer_recent_news_item']) {
-                                    break;
+                                $i=0;
+                                foreach ($all_news as $news) {
+                                    $i++;
+                                    if($i > $setting['footer_recent_news_item']) {
+                                        break;
+                                    }
+                                    ?>
+                                    <li><a href="<?php echo base_url(); ?>news/view/<?php echo $news['news_id']; ?>"><?php echo $news['news_title']; ?></a></li>    
+                                    <?php
                                 }
-                                ?>
-                                <li><a href="<?php echo base_url(); ?>news/view/<?php echo $news['news_id']; ?>"><?php echo $news['news_title']; ?></a></li>    
-                                <?php
-                            }
                             ?>
                         </ul>
                     </div>
@@ -69,18 +69,18 @@
                         <h3><?php echo $setting['footer_col3_title']; ?></h3>
                         <div class="row pl-10 pr-10">                            
                             <?php
-                            $i=0;
-                            foreach($portfolio_footer as $row) {
-                                $i++;
-                                if($i > $setting['footer_recent_portfolio_item']) {
-                                    break;
+                                $i=0;
+                                foreach($portfolio_footer as $row) {
+                                    $i++;
+                                    if($i > $setting['footer_recent_portfolio_item']) {
+                                        break;
+                                    }
+                                    ?>
+                                    <div class="col-4 footer-project">
+                                        <a href="<?php echo base_url(); ?>portfolio/view/<?php echo $row['id']; ?>"><img src="<?php echo base_url(); ?>public/uploads/<?php echo $row['photo']; ?>" alt="Project Photo"></a>
+                                    </div>
+                                    <?php
                                 }
-                                ?>
-                                <div class="col-4 footer-project">
-                                    <a href="<?php echo base_url(); ?>portfolio/view/<?php echo $row['id']; ?>"><img src="<?php echo base_url(); ?>public/uploads/<?php echo $row['photo']; ?>" alt="Project Photo"></a>
-                                </div>
-                                <?php
-                            }
                             ?>                            
                         </div>
                     </div>
@@ -114,13 +114,13 @@
                         </div>
                         <ul class="footer-social">
                             <?php
-                            foreach ($social as $row)
-                            {
-                                if($row['social_url']!='')
+                                foreach ($social as $row)
                                 {
-                                    echo '<li><a href="'.$row['social_url'].'"><i class="'.$row['social_icon'].'"></i></a></li>';
+                                    if($row['social_url']!='')
+                                    {
+                                        echo '<li><a href="'.$row['social_url'].'"><i class="'.$row['social_icon'].'"></i></a></li>';
+                                    }
                                 }
-                            }
                             ?>
                         </ul>
                     </div>

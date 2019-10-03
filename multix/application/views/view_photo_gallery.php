@@ -14,22 +14,22 @@
     <div class="container">
         <div class="row">
             <?php
-            foreach ($photo_gallery as $row) {
-                ?>
-                <div class="col-lg-4 col-sm-6">
-                    <div class="gallery-group">
-                        <div class="gallery-photo" style="background-image: url(<?php echo base_url(); ?>public/uploads/<?php echo $row['photo_name']; ?>)">
-                            <div class="gallery-bg"></div>
-                            <div class="gallery-table">
-                                <div class="gallery-icon">
-                                    <a href="<?php echo base_url(); ?>public/uploads/<?php echo $row['photo_name']; ?>" class="magnific"><i class="fa fa-search-plus"></i></a>
+                foreach ($photo_gallery as $row) {
+                    ?>
+                    <div class="col-lg-4 col-sm-6">
+                        <div class="gallery-group">
+                            <div class="gallery-photo" style="background-image: url(<?php echo base_url(); ?>public/uploads/<?php echo $row['photo_name']; ?>)">
+                                <div class="gallery-bg"></div>
+                                <div class="gallery-table">
+                                    <div class="gallery-icon">
+                                        <a href="<?php echo base_url(); ?>public/uploads/<?php echo $row['photo_name']; ?>" class="magnific"><i class="fa fa-search-plus"></i></a>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <?php
-            }
+                    <?php
+                }
             ?>
         </div>
     </div>

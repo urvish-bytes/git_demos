@@ -14,26 +14,26 @@
     <div class="container">
         <div class="row">
             <?php
-            foreach ($services as $row) {
-                ?>
-                <div class="col-lg-4 col-md-6">
-                    <div class="services-item effect-item">
-                        <a href="<?php echo base_url(); ?>service/view/<?php echo $row['id']; ?>" class="image-effect">
-                            <div class="services-photo" style="background-image: url(<?php echo base_url(); ?>public/uploads/<?php echo $row['photo']; ?>)"></div>
-                        </a>
-                        <div class="services-text">
-                            <h3><a href="<?php echo base_url(); ?>service/view/<?php echo $row['id']; ?>"><?php echo $row['name']; ?></a></h3>
-                            <p>
-                                <?php echo nl2br($row['short_description']); ?>
-                            </p>
-                            <div class="button-bn">
-                                <a href="<?php echo base_url(); ?>service/view/<?php echo $row['id']; ?>"><?php echo READ_MORE; ?> <i class="fa fa-chevron-circle-right"></i></a>
+                foreach ($services as $row) {
+                    ?>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="services-item effect-item">
+                            <a href="<?php echo base_url(); ?>service/view/<?php echo $row['id']; ?>" class="image-effect">
+                                <div class="services-photo" style="background-image: url(<?php echo base_url(); ?>public/uploads/<?php echo $row['photo']; ?>)"></div>
+                            </a>
+                            <div class="services-text">
+                                <h3><a href="<?php echo base_url(); ?>service/view/<?php echo $row['id']; ?>"><?php echo $row['name']; ?></a></h3>
+                                <p>
+                                    <?php echo nl2br($row['short_description']); ?>
+                                </p>
+                                <div class="button-bn">
+                                    <a href="<?php echo base_url(); ?>service/view/<?php echo $row['id']; ?>"><?php echo READ_MORE; ?> <i class="fa fa-chevron-circle-right"></i></a>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                <?php
-            }
+                    <?php
+                }
             ?>
         </div>
     </div>

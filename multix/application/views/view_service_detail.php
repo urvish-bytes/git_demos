@@ -30,23 +30,23 @@
                         <h4><?php echo $setting['sidebar_service_heading_service']; ?></h4>
                         <ul>
                             <?php
-                            foreach ($services as $row) {
-                                ?>
-                                <li><a href="<?php echo base_url(); ?>service/view/<?php echo $row['id']; ?>"><?php echo $row['name']; ?></a></li>
-                                <?php
-                            }
+                                foreach ($services as $row) {
+                                    ?>
+                                    <li><a href="<?php echo base_url(); ?>service/view/<?php echo $row['id']; ?>"><?php echo $row['name']; ?></a></li>
+                                    <?php
+                                }
                             ?>
                         </ul>
                     </div>
                     <div class="service-sidebar-item headstyle">
                         <h4><?php echo $setting['sidebar_service_heading_quick_contact']; ?></h4>
                         <?php
-                        if($this->session->flashdata('error')) {
-                            echo '<div class="error-class">'.$this->session->flashdata('error').'</div>';
-                        }
-                        if($this->session->flashdata('success')) {
-                            echo '<div class="success-class">'.$this->session->flashdata('success').'</div>';
-                        }
+                            if($this->session->flashdata('error')) {
+                                echo '<div class="error-class">'.$this->session->flashdata('error').'</div>';
+                            }
+                            if($this->session->flashdata('success')) {
+                                echo '<div class="success-class">'.$this->session->flashdata('success').'</div>';
+                            }
                         ?>
                         <?php echo form_open(base_url().'service/send_email',array('class' => '')); ?>
                             <div class="form-row">

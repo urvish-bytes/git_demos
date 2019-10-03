@@ -58,12 +58,12 @@
                 <div class="contact-form headstyle pt_90">
                     <h4><?php echo CONTACT_FORM; ?></h4>
                     <?php
-                    if($this->session->flashdata('error')) {
-                        echo '<div class="error-class">'.$this->session->flashdata('error').'</div>';
-                    }
-                    if($this->session->flashdata('success')) {
-                        echo '<div class="success-class">'.$this->session->flashdata('success').'</div>';
-                    }
+                        if($this->session->flashdata('error')) {
+                            echo '<div class="error-class">'.$this->session->flashdata('error').'</div>';
+                        }
+                        if($this->session->flashdata('success')) {
+                            echo '<div class="success-class">'.$this->session->flashdata('success').'</div>';
+                        }
                     ?>
                     <?php echo form_open(base_url().'contact/send_email',array('class' => '')); ?>
                         <div class="form-row row">
