@@ -1,12 +1,13 @@
 <?php
-class Product_model extends CI_Model{
+class Product_model extends CI_Model
+{
 
-	function product_list(){
+	function product_list() {
 		$hasil=$this->db->get('product');
 		return $hasil->result();
 	}
 
-	function save_product(){
+	function save_product() {
 		$data = array(
 				'product_code' 	=> $this->input->post('product_code'), 
 				'product_name' 	=> $this->input->post('product_name'), 
@@ -16,7 +17,7 @@ class Product_model extends CI_Model{
 		return $result;
 	}
 
-	function update_product(){
+	function update_product() {
 		$product_code=$this->input->post('product_code');
 		$product_name=$this->input->post('product_name');
 		$product_price=$this->input->post('price');
@@ -28,7 +29,7 @@ class Product_model extends CI_Model{
 		return $result;
 	}
 
-	function delete_product(){
+	function delete_product() {
 		$product_code=$this->input->post('product_code');
 		$this->db->where('product_code', $product_code);
 		$result=$this->db->delete('product');

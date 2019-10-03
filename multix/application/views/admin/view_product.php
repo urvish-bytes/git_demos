@@ -59,7 +59,7 @@
 											<!-- <?= anchor( base_url(). "admin/product/{$row->product_id}",$row->product_name,['class'=>'btn-link disabled','onclick'=>'alert("<?php echo $row["product_name"] . ', ' . product not found" ?>")']) ?> -->
 											
 											<!-- return confirm or alert a dialog box -->
-											<a href="<?php echo base_url(); ?>admin/product/show/<?php echo $row['product_id']; ?>" class="btn btn-link" target="_blank" onclick="return confirm('<?php echo $row['product_name'] . ' ' . "product not found" ?>')"><?php echo $row['product_name']; ?></a>
+											<a href="<?php echo base_url(); ?>admin/product/show/<?php echo $row['product_id']; ?>" class="btn btn-link" target="_blank" onclick="return confirm('<?php echo $row['product_name'] . ' - ' . "Product not found" ?>')"><?php echo $row['product_name']; ?></a>
 										
 										</td>
 										<td><?php echo $row['product_desc']; ?></td>
