@@ -12,6 +12,8 @@ class Migration_Product extends CI_Migration
 
 	public function up()
 	{
+		// $this->dbforge->drop_table('product');
+
 		// Create table 
 			$this->dbforge->add_field(array( 
 				'prodid' => array( 
