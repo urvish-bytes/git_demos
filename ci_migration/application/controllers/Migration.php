@@ -12,7 +12,7 @@ class Migration extends CI_Controller
 	        if ( ! $this->migration->current()) {
 	        	show_error($this->migration->error_string());
 	        } else {
-	          	echo "Migration Working";
+	          	echo "<h3>Migration Working</h3>";
 	        }
   //     	} else {
 	 //        echo "Migration Not Working";

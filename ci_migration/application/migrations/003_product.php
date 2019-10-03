@@ -1,7 +1,8 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
-class Migration_Product extends CI_Migration {
+class Migration_Product extends CI_Migration 
+{
 
 	public function __construct()
 	{
@@ -9,8 +10,8 @@ class Migration_Product extends CI_Migration {
 		$this->load->database();
 	}
 
-	public function up() {
-		
+	public function up()
+	{
 		// Create table 
 			$this->dbforge->add_field(array( 
 				'prodid' => array( 
@@ -58,10 +59,22 @@ class Migration_Product extends CI_Migration {
 					'prodprice' => "1399" 
 				) 
 			); 
-			$this->db->update_batch('product',$update,'prodid'); 
+			$this->db->update_batch('product',$update,'prodid');
+
+		// Delete record
+			// $delete = array(
+			// 	array(
+			// 		'prodid' => "1",
+			// 		'prodname' => "LP_SH_001",
+			// 		'prodprice' => "1250"
+			// 	)
+			// );
+			// $this->db->where_in('prodid',$delete);
+			// $this->db->delete('product');
 	} 
 
-	public function down() {
+	public function down() 
+	{
 		$this->dbforge->drop_table('product');
 	}
 
