@@ -12,7 +12,7 @@ class Migration_Product extends CI_Migration
 
 	public function up()
 	{
-		// $this->dbforge->drop_table('product');
+		$this->dbforge->drop_table('product');
 
 		// Create table 
 			$this->dbforge->add_field(array( 
@@ -44,7 +44,12 @@ class Migration_Product extends CI_Migration
 					'prodid' => "2", 
 					'prodname' => 'SH_002_LP', 
 					'prodprice' => "799" 
-				) 
+				),
+				array(
+					'prodid' => "3",
+					'prodname' => "SH_003_LP",
+					'prodprice' => "1099"
+				)
 			); 
 			$this->db->insert_batch('product',$insert); 
  
@@ -59,20 +64,23 @@ class Migration_Product extends CI_Migration
 					'prodid' => "2", 
 					'prodname' => 'LP_SH_002', 
 					'prodprice' => "1399" 
-				) 
+				),
+				array(
+					'prodid' => "3",
+					'prodname' => "LP_SH_003",
+					'prodprice' => "999"
+				)
 			); 
 			$this->db->update_batch('product',$update,'prodid');
 
 		// Delete record
-			// $delete = array(
-			// 	array(
-			// 		'prodid' => "1",
-			// 		'prodname' => "LP_SH_001",
-			// 		'prodprice' => "1250"
-			// 	)
-			// );
-			// $this->db->where_in('prodid',$delete);
-			// $this->db->delete('product');
+			$delete = array(
+				'prodid' => "2",
+				'prodname' => "LP_SH_002",
+				'prodprice' => "1399"
+			);
+			$this->db->where_in('prodid',$delete);
+			$this->db->delete('product');
 	} 
 
 	public function down() 
