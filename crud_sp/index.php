@@ -4,6 +4,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
+    <!-- <script src="main.js"></script> -->
     <style>  
         body  
         {  
@@ -53,8 +54,8 @@
 
 <script>  
     $(document).ready(function() 
-    {  
-        fetchUser();  
+    {   
+        fetchUser();
         function fetchUser() {  
             var action = "select";  
             $.ajax({  
@@ -81,13 +82,13 @@
                     url : "action.php",  
                     method: "POST",  
                     data: {firstName:firstName, lastName:lastName, id:id, action:action},  
-                    success:function(data){  
-                        alert(data);  
+                    success:function(data) {
+                        // alert(data);  
                         fetchUser();  
                     }  
                 });  
             } else {  
-                alert("Both Fields are Required");  
+                alert('Both fields are required');
             }  
         });  
      
@@ -98,7 +99,7 @@
                 method:"POST",  
                 data:{id:id},  
                 dataType:"json",  
-                success:function(data){  
+                success:function(data) {
                     $('#action').text("Edit");  
                     $('#user_id').val(id);  
                     $('#first_name').val(data.first_name);  
@@ -115,10 +116,9 @@
                     url:"action.php",  
                     method:"POST",  
                     data:{id:id, action:action},  
-                    success:function(data)  
-                    {  
+                    success:function(data) {  
                         fetchUser();  
-                        alert(data);  
+                        // alert(data);  
                     }
                 })  
             } else {  
