@@ -1,32 +1,33 @@
 <html>
-<head>  
-    <title>PHP Ajax Crud With Stored Procedure</title>  
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>  
-    
-    <style>  
-        body  
-        {  
-          margin:0;  
-          padding:0;  
-          background-color:#f1f1f1;  
-        }  
-        .box  
-        {  
-          width:750px;  
-          padding:20px;  
-          background-color:#fff;  
-          border:1px solid #ccc;  
-          border-radius:5px;  
-          margin:100px auto;  
-        }  
-    </style>  
+<head>
+    <title>PHP Ajax Crud With Stored Procedure</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+    <style>
+        body {
+            margin:0; 
+            padding:0;
+            background-color:#f1f1f1;
+        }
+        .box {  
+            width:750px;
+            padding:20px;
+            background-color:#fff;
+            border:1px solid #ccc;
+            border-radius:5px;
+            margin:auto auto;
+        }
+    </style>
 </head>
 <body>
     <div class="conatiner box">
         <h4 align="center"><b>Ajax Crud With Store Procedure</b></h4> <br/>
 
+        <div class="insert" align="right">
+            <button type="buttom" name="insert" id="insert" class="btn btn-primary" style="width: 70px;font-weight: bold; font-size: 15px;" onclick="">Add</buttom>
+        </div>
         <div class="col-md-6">
             <label> First Name: </label>
             <input type="text" name="first_name" id="first_name" class="form-control"> <br/>
@@ -50,6 +51,7 @@
     $(document).ready(function() {
         fetchUser();
         function fetchUser() {
+            $(".insert").hide();
             var action = "select";
             $.ajax({
                 url: "select.php",
@@ -68,9 +70,10 @@
             var firstName = $('#first_name').val();  
             var lastName = $('#last_name').val();  
             var id = $('#user_id').val();  
-            var action = $('#action').text();  
+            var action = $('#action').text();
             
             if(firstName != '' && lastName != '') {  
+                $(".insert").hide();
                 $.ajax({  
                     url : "action.php",  
                     method: "POST",  
@@ -78,10 +81,10 @@
                     success:function(data) {
                         alert(data);  
                         fetchUser();  
-                    },
-                    error:function(){
-                        alert("failed");
-                    }  
+                    }
+                    // error:function(){
+                    //     alert("failed");
+                    // }  
                 });  
             } else {  
                 alert('Both fields are required');
@@ -90,6 +93,8 @@
 
         $(document).on('click', '.update', function() {  
             var id = $(this).attr("id");  
+            // $('#insert').attr("disabled", false);
+            $(".insert").show();
             $.ajax({  
                 url:"fetch.php",  
                 method:"POST",  
