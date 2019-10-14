@@ -1,5 +1,5 @@
 <?php
-    $connect = mysqli_connect("localhost","root", "", "crud_sp");
+    $connect = mysqli_connect("localhost","root", "", "crud_storeprocedure");
     if(isset($_POST["id"]))
     {
         $output = array();

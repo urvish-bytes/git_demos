@@ -12,7 +12,7 @@
 		";
 
 		if(mysqli_query($connect, "DROP PROCEDURE IF EXISTS selectUser"))  
-		{  
+		{
 			if(mysqli_query($connect, $procedure)) {  
 				$query = "CALL selectUser()";
 				$result = mysqli_query($connect, $query);
