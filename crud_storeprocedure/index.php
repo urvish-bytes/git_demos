@@ -7,8 +7,6 @@
 
     <style>
         body {
-            margin:0; 
-            padding:0;
             background-color:#f1f1f1;
         }
         .box {  
@@ -23,10 +21,11 @@
 </head>
 <body>
     <div class="conatiner box">
+    <!-- <form id="myform" name="myform"> -->
         <h4 align="center"><b>Ajax Crud With Store Procedure</b></h4> <br/>
-
         <div class="insert" align="right">
-            <button type="buttom" name="insert" id="insert" class="btn btn-primary" style="width: 70px;font-weight: bold; font-size: 15px;" onclick="">Add</buttom>
+            <button type="buttom" name="insert" id="insert" class="btn btn-primary" style="width: 70px;font-weight: bold; font-size: 15px;">Add</buttom>
+                <!-- onclick="window.location.reload();" -->
         </div>
         <div class="col-md-6">
             <label> First Name: </label>
@@ -43,6 +42,7 @@
         <div id="result" class="table-responsive">
 
         </div>
+    <!-- </form> -->
     </div>
 </body>
 </html>
@@ -66,7 +66,7 @@
             });
         }
 
-        $('#action').click(function() {  
+        $('#action').click(function() { 
             var firstName = $('#first_name').val();  
             var lastName = $('#last_name').val();  
             var id = $('#user_id').val();  
@@ -79,12 +79,9 @@
                     method: "POST",  
                     data: {firstName:firstName, lastName:lastName, id:id, action:action},  
                     success:function(data) {
-                        alert(data);  
+                        // alert(data);
                         fetchUser();  
-                    }
-                    // error:function(){
-                    //     alert("failed");
-                    // }  
+                    } 
                 });  
             } else {  
                 alert('Both fields are required');
@@ -92,8 +89,7 @@
         }); 
 
         $(document).on('click', '.update', function() {  
-            var id = $(this).attr("id");  
-            // $('#insert').attr("disabled", false);
+            var id = $(this).attr("id");
             $(".insert").show();
             $.ajax({  
                 url:"fetch.php",  
@@ -101,13 +97,44 @@
                 data:{id:id},  
                 dataType:"json",  
                 success:function(data) {
-                    $('#action').text("Edit");  
-                    $('#user_id').val(id);  
-                    $('#first_name').val(data.first_name);  
-                    $('#last_name').val(data.last_name);  
+                    if (data.redirect) {
+                        // data.redirect contains the string URL to redirect to
+                            // var data = '';
+                            // window.location.href = data.redirect;
+                        $("#myform").replaceWith(data.form);
+                    } else {
+                        // data.form contains the HTML for the replacement form
+                        $('#action').text("Edit");  
+                        $('#user_id').val(id);  
+                        $('#first_name').val(data.first_name);  
+                        $('#last_name').val(data.last_name);  
+                    }
                 } 
            })  
-        });  
+        }); 
+
+        // $(document).on('click', '.insert', function() {  
+        //     if($('#action').text("Insert"))
+        //             history.go(0);
+        // }
+
+        // $(document).on('click', '.insert', function() {  
+        //     var id = $(this).attr("id");  
+        //     // if(confirm("Are you sure you want to remove this data?")) {  
+        //         var action = "insert";  
+        //         $.ajax({  
+        //             url:"action.php",  
+        //             method:"POST",  
+        //             data:{action:action},  
+        //             success:function(data) {  
+        //                 fetchUser();  
+        //                 // alert(data);  
+        //             }
+        //         })  
+        //     // } else {  
+        //         // return false;  
+        //     // }  
+        // });   
         
         $(document).on('click', '.delete', function() {  
             var id = $(this).attr("id");  
