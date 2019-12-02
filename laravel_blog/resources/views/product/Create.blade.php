@@ -1,7 +1,8 @@
 @extends('product.layout')
 
 @section('content')
-<h2>Add Product</a></h2>
+<h2 style="margin-top: 12px;" class="text-center">Add Product</a></h2>
+<br>
 
 <form action="{{ route('products.store') }}" method="post" name="add_product">
 {{ csrf_field() }}
