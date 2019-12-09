@@ -26,5 +26,18 @@ class ProductsTableSeeder extends Seeder
             'product_code' => 'Vivo',
             'description'=>'Vivo digital company'
         ]]);
+
+        // for($i=0; $i<100; $i++) {
+        //     App\Product::create([
+        //         'title' => $fakee->title,
+        //         'product_code' => $faker->product_code,
+        //         'description'=> $faker->description
+        //     ]);
+        // }
+
+        $faker = Faker\Factory::create();
+        $user = factory(App\Product::class, 20)->create();
+
+
     }
 }

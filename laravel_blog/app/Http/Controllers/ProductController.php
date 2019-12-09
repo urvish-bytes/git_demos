@@ -81,7 +81,7 @@ class ProductController extends Controller
      */
     public function update(Request $request, $id)
     {   
-        echo "update func";
+        // echo "update func";
         $request->validate([
             'title' => 'required',
             'product_code' => 'required',
