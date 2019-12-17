@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Search functionality - justLaravel.com</title>
+<title>Search Demo</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
 </head>
 <body>
+
 	<div class="container">
 		<form action="/search" method="POST" role="search">
 			{{ csrf_field() }}
@@ -21,9 +22,37 @@
 			</div>
 		</form>
 	</div>	
+
 	<div class="container">
-	@if(isset($users))
-	<h2>Sample User details</h2>
+		@if(isset($details))
+		<p> The Search results for your query <b> {{ $query }} </b> are :</p>
+		<h2>Sample User details</h2>
+		<table class="table table-striped">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<tbody>
+				@foreach($details as $user)
+				<tr>
+					<td>{{$user->name}}</td>
+					<td>{{$user->email}}</td>
+				</tr>
+				@endforeach
+			</tbody>
+		</table>
+		
+		@if($details){!! $details->render() !!}@endif
+		@elseif(isset($message))
+		<p>{{ $message }}</p>
+		@endif
+	</div>
+		
+	<div class="container">
+		@if(isset($users))
+		<h2>Sample User details</h2>
 		<table class="table table-striped">
 			<thead>
 				<tr>
@@ -43,31 +72,6 @@
 		</table>
 		{!! $users->render() !!}@endif
 	</div>
-		<div class="container">
-			@if(isset($details))
-			<p> The Search results for your query <b> {{ $query }} </b> are :</p>
-			<h2>Sample User details</h2>
-			<table class="table table-striped">
-				<thead>
-					<tr>
-						<th>Name</th>
-						<th>Email</th>
-					</tr>
-				</thead>
-				<tbody>
-					@foreach($details as $user)
-					<tr>
-						<td>{{$user->name}}</td>
-						<td>{{$user->email}}</td>
-					</tr>
-					@endforeach
-				</tbody>
-			</table>
-			
-			@if($details){!! $details->render() !!}@endif
-			@elseif(isset($message))
-			<p>{{ $message }}</p>
-			@endif
-		</div>
+
 </body>
 </html>
