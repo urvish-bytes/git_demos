@@ -17,7 +17,7 @@ class ProductController extends Controller
     public function index()
     {
         $data['products'] = Product::orderBy('id','desc')->paginate(0);
-        return view('product/list', $data);
+        return view('product.list',$data);
     }
 
     /**
@@ -26,7 +26,8 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function create()
-    {
+    {   
+        // echo "data";exit;
         return view('product.create');
     }
 
@@ -38,14 +39,14 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+
         $request->validate([
             'title' => 'required',
-            'product_code' => 'required',
+            'product_code' => 'required|unique:products',
             'description' => 'required',
         ]);
-        product::create($request->all());
-        // echo "inside store";exit;
-        return redirect::to('products')->with('success','Product Created successfully');
+        Product::create($request->all());
+        return Redirect::to('product')->with('success','Product created successfully');
     }
 
     /**
@@ -67,9 +68,16 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        $where = array('id' => $id);
-        $data ['prodcuct_info'] = Product::where($where)->first();
-        return view('product.edit',$data);
+        // $where = array('id' => $id);
+        // $data = Product::where($where)->first();
+
+        $product_info = Product::find($id);
+
+        if($product_info){
+            return view('product.edit',compact('product_info'));
+        }
+        else
+            dd("data not found");
     }
 
     /**
@@ -80,15 +88,17 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
-    {   
-        // echo "update func";
+    {
+        $product_info = Product::find($id);
+        
         $request->validate([
             'title' => 'required',
-            'product_code' => 'required',
             'description' => 'required',
         ]);
-        $update = ['title'=>$request->title,'description'=>$request->description];Product::where('id',$id)->update($update);
-        return Redirect::to('products')->with('success','Product Updated Successfully');
+
+        $update = ['title'=>$request->title,'description'=>$request->description];
+        Product::where('id',$id)->update($update);
+        return Redirect::to('product')->with('success','Product update successfully');
     }
 
     /**
@@ -98,9 +108,9 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)
-    {   
-        // echo "inside delete";exit;
-        Product::where ('id',$id)->delete();
-        return Redirect::to('products')->with('success', 'Product Deleted Successfully');
+    {
+        $product_info = Product::findOrFail($id);
+        $product_info->delete();
+        return Redirect::to('product')->with('success','Product deleted successfully');
     }
 }
