@@ -14,3 +14,6 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('crud_ajax','AjaxController');
+// Route::match(['get', 'post'], 'users', (['as' => 'users', 'uses' => 'AjaxController@index']));
