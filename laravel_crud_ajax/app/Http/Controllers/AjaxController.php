@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\User;
+use Redirect,Response;
 class AjaxController extends Controller
 {
     /**
@@ -14,7 +15,7 @@ class AjaxController extends Controller
     public function index()
     {   
         $data['users'] = User::orderBy('id','desc')->paginate(0);
-        return view('ajax_crud',$data);
+        return view('crud_ajax',$data);
     }
 
     /**
@@ -34,10 +35,10 @@ class AjaxController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
-    {
-        $userId = $request->user_id;
-        $user = User::updateOrCreate(['id'=>$userId],['name'=>$request->name,'email'=>$request->email]);
-        return Response::json($user);
+    { 
+        $userId = $request->user_id; 
+        $user = User::updateOrCreate(['id' => $userId],['name' => $request->name,'email'=>$request->email]); 
+        return Response::json($user); 
     }
 
     /**
