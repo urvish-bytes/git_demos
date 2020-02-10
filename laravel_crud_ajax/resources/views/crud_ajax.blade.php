@@ -37,19 +37,20 @@
                      <td>{{ $u_info->id  }}</td>
                      <td>{{ $u_info->name }}</td>
                      <td>{{ $u_info->email }}</td>
-                     <!-- <td>
+                     <td>
                         <a href="javascript:void(0)" id="edit-user" data-id="{{ $u_info->id }}" class="btn btn-info">Edit</a>
                         <a href="javascript:void(0)" id="delete-user" data-id="{{ $u_info->id }}" class="btn btn-danger delete-user">Delete</a>
-                     </td> -->
-                     <td>
+                     </td>
+                     <!-- <td>
                         <a href="{{ url('user_edit',[$u_info->id]) }}" class="btn btn-primary">Edit</a>
-                           <td>
+                     </td>
+                     <td>
                         <form action="{{ url('user_destroy',[$u_info->id]) }}" method="post">
                            {{ csrf_field() }}
                            @method('DELETE')
                            <button class="btn btn-danger" type="submit" onclick="return confirm('Are you sure want to delete?')">Delete</button>
-                        </form></td>
-                    </td>
+                        </form>
+                     </td> -->
                   </tr>
                   @endforeach
                </tbody>
@@ -102,41 +103,42 @@
       
       /* Add User */
       $('#create-new-user').click(function () {
-         $('#btn-save').val("create-user");
-         $('#userForm').trigger("reset");
-         $('#userCrudModal').html("Add New User");
-         $('#ajax-crud-modal').modal('show');
-    });
+         $('#btn-save').val("create-user");  
+         $('#userForm').trigger("reset"); 
+         $('#userCrudModal').html("Add New User"); 
+         $('#ajax-crud-modal').modal('show'); 
+         // $('#userCrudModal').html("Cancel");
+      });
 
       /* Edit User */ 
       $('body').on('click','#edit-user',function() {
-         var user_id = $(this).data('id');
-         $.get('user_store/' + user_id + '/edit',function(data){
+         var user_id = $(this).data('id'); 
+         $.get('crud_ajax/' + user_id + '/edit',function(data){
             $('#userCrudModal').html("Edit User");
             $('#btn-save').val("edit-user");
-            $('#ajax-crud-modal').modal('show');
-            $('#user_id').val(data.id);
-            $('#name').val(data.name);
-            $('#email').val(data.email);
+            $('#ajax-crud-modal').modal('show'); 
+            $('#user_id').val(data.id); 
+            $('#name').val(data.name); 
+            $('#email').val(data.email); 
          })
       });
 
       /* Delete */
       $('body').on('click','.delete-user',function(){
          var user_id = $(this).data("id");
-         confirm("Are you sure want to delete.");
-
-         $.ajax({
-            type:"DELETE",
-            url:"{{ url('crud_ajax') }}"+'/'+user_id,
-            success: function (data) {
-               $("#user_id_"+user_id).remove();
-            },
-            error: function (data) {
-               console.log('Error:',data);
-            }
-         });
-      });
+         confirm("Are you sure want to delete."); 
+ 
+         $.ajax({ 
+            type:"DELETE", 
+            url:"{{ url('crud_ajax') }}"+'/'+user_id, 
+            success: function (data) { 
+               $("#user_id_"+user_id).remove(); 
+            }, 
+            error: function (data) { 
+               console.log('Error:',data); 
+            } 
+         }); 
+      }); 
 
       if($("#userForm").length > 0) {
          $("#userForm").validate({
