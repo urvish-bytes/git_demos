@@ -14,3 +14,9 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/', 'PagesController@index');
+Route::get('/getUsers', 'PagesController@getUsers');
+Route::post('/addUser', 'PagesController@addUser');
+Route::post('/updateUser', 'PagesController@updateUser');
+Route::get('/deleteUser/{id}', 'PagesController@deleteUser');
